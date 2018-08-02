@@ -1,0 +1,28 @@
+﻿@{
+    var placeholder = "";
+    if (string.IsNullOrWhiteSpace(ViewData.ModelMetadata.Watermark))
+    {
+        //if (string.IsNullOrWhiteSpace(ViewData.ModelMetadata.DisplayName))
+        //{
+        //    placeholder = ViewData.ModelMetadata.PropertyName;
+        //}
+        //else
+        //{
+        //    placeholder = ViewData.ModelMetadata.DisplayName;
+        //}
+    }
+    else
+    {
+        placeholder = ViewData.ModelMetadata.Watermark;
+    }
+
+
+
+}
+
+
+            @Html.TextBox("", ViewData.TemplateInfo.FormattedModelValue, new { @class = "form-control ", placeholder = @placeholder })
+
+    
+
+

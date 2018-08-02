@@ -1,0 +1,173 @@
+﻿  .top-grid-top {
+    position: relative;
+}
+
+.top-grids {
+    position: absolute;
+    top: -48px;
+    width: 100%;
+    z-index: 999;
+}
+
+.top-grid h3 {
+    color: #DC483A;
+    font-size: 1.3em;
+    padding: 0.8em;
+    background: #fff;
+    text-transform: uppercase;
+}
+
+a.read {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1em;
+    padding: 0.5em 1em;
+    width: 100%;
+    display: block;
+    font-family: 'Arimo', sans-serif;
+    height: 40px;
+    background: #DC483A url("https://s3.amazonaws.com/alkcontent/PublicContent/ar1_728922.png") no-repeat 310px 0px;
+}
+
+    a.read:hover {
+        background: #303030 url("https://s3.amazonaws.com/alkcontent/PublicContent/ar_857598.png") no-repeat 310px 0px;
+        color:white;
+    }
+
+.middle-grid {
+    margin: 20em 0 0;
+    border-top: 1px dashed #BBB8B8;
+    padding: 3em 0em 0;
+}
+
+.grid-middle h3 {
+    color: #000;
+    font-size: 2em;
+    padding: 0 0 1em;
+}
+
+.grid-middle p {
+    color: #838383;
+    font-size: 1.1em;
+    font-family: 'Arimo', sans-serif;
+    line-height: 1.7em;
+}
+
+.grid-middle span {
+    color: #DC483A;
+    font-size: 1.1em;
+    font-family: 'Arimo', sans-serif;
+    line-height: 1.5em;
+    padding: 0 0 1em;
+    display: block;
+}
+
+.grid-middle ul {
+    padding: 0.5em 0 1em;
+}
+
+    .grid-middle ul li {
+        list-style: none;
+        border-bottom: 1px dashed #BBB8B8;
+    }
+
+        .grid-middle ul li a {
+            color: #838383;
+            font-size: 1.1em;
+            font-family: 'Arimo', sans-serif;
+            padding: 0.5em 0;
+            display: block;
+            text-decoration: none;
+        }
+
+            .grid-middle ul li a i {
+                background: #DC483A;
+                width: 6px;
+                height: 6px;
+                display: inline-block;
+                vertical-align: middle;
+                margin: 0 8px 0px;
+            }
+
+            .grid-middle ul li a:hover {
+                color: #DC483A;
+                padding: 0.5em 0 0.5em 0.3em;
+            }
+
+        .grid-middle ul li:nth-child(8) {
+            border-bottom: none;
+        }
+
+.news {
+    float: left;
+    width: 21.5%;
+}
+
+.news-in {
+    float: right;
+    width: 75%;
+    margin-left: 2%;
+}
+
+.grid-middle b {
+    color: #DC483A;
+    font-size: 1.1em;
+    font-family: 'Arimo', sans-serif;
+    line-height: 1.5em;
+    padding: 0 0 0.2em;
+    display: block;
+}
+
+.img-responsive {
+    max-width: 100%;
+    height: 200px;
+}
+
+.latest-grid {
+    padding: 1em 0;
+}
+
+.bottom-grid h3 {
+    color: #000;
+    font-size: 2em;
+    padding: 0 0.5em 1em;
+}
+
+.bottom-grids p {
+    color: #838383;
+    font-size: 1.1em;
+    font-family: 'Arimo', sans-serif;
+    line-height: 1.7em;
+    padding: 0.8em 0 0;
+}
+
+a.more {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1em;
+    padding: 0.5em 0.8em;
+    width: 45%;
+    display: block;
+    font-family: 'Arimo', sans-serif;
+    height: 40px;
+    background: #DC483A url("https://s3.amazonaws.com/alkcontent/PublicContent/ar1_728922.png") no-repeat 117px 0px;
+    margin: 0.8em 0 0;
+}
+
+    a.more:hover {
+        background: #303030 url("https://s3.amazonaws.com/alkcontent/PublicContent/ar_857598.png") no-repeat 117px 0px;
+    }
+
+a.read {
+    background: #d8c900 url("https://s3.amazonaws.com/alkcontent/PublicContent/ar1_728922.png") no-repeat 100% 0px;
+}
+
+    a.read:hover {
+        background: #303030 url("https://s3.amazonaws.com/alkcontent/PublicContent/ar_857598.png") no-repeat 100% 0px;
+    }
+
+a.more {
+    width: 55.5%;
+}
+
+ 

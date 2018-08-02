@@ -1,0 +1,34 @@
+﻿<script src="~/Scripts/plugin/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
+
+
+@model DateTime?
+@{
+    var placeholder = "";
+    if (!string.IsNullOrWhiteSpace(ViewData.ModelMetadata.Watermark))
+    {
+       
+        placeholder = ViewData.ModelMetadata.Watermark;
+    }
+
+
+
+}
+@Html.TextBox("", (Model.HasValue ? Model.Value.ToString("HH:mm") : string.Empty), new { @class = "form-control Time", placeholder = @placeholder, type = "text" })
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        /*
+             * TIMEPICKER
+             */
+
+        $('.Time').timepicker({
+            showMeridian: false
+            
+        });
+
+    });
+
+
+</script>

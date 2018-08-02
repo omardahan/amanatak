@@ -1,0 +1,342 @@
+﻿<#@ template language="C#" HostSpecific="True" #>
+<#@ output extension=".cshtml" #>
+<#@ include file="Imports.include.t4" #>
+
+@model PagedList.IPagedList<#=        "<" + ViewDataTypeName + ">" #>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<#
+    // The following chained if-statement outputs the file header code and markup for a partial view, a view using a layout page, or a regular view.
+    if(IsPartialView) {
+#>
+
+<#
+    } else if(IsLayoutPageSelected) {
+#>
+
+@{
+    ViewBag.Title = "<#=ViewName#>";
+<#
+        if (!String.IsNullOrEmpty(LayoutPageFile)) {
+#>
+    Layout = "<#=                LayoutPageFile#>";
+<#
+        }
+#>
+}
+
+
+
+<#
+}     else {
+#>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title><#=            ViewName #></title>
+</head>
+<body>
+<#
+        PushIndent("    ");
+    }
+#>
+<!-- MAIN CONTENT -->
+<div id="content">
+    <!-- row -->
+    <div class="row">
+       
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+            <!-- sparks -->
+           
+            <!-- end sparks -->
+        </div>
+        <!-- end col -->
+    </div>
+    <!-- end row -->
+    <!-- widget grid -->
+    <section id="widget-grid">
+        <!-- row -->
+        <div class="row">
+            
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-th-list"></i> </span>
+                        <h2><#=            ViewName#></h2>
+
+                    </header>
+
+                    <!-- widget div-->
+                    <div>
+
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                            <!-- This area used as dropdown edit box -->
+
+                        </div>
+                        
+                        <div class="widget-body  ">
+
+                            <div class="dt-toolbar">
+                                <div class="col-xs-12 col-sm-6">
+
+  @using (Html.BeginForm("Index", "<#= ViewDataTypeShortName #>", FormMethod.Get))
+                                    {
+                                  
+
+                                    <div class="form-inline" >
+                                        <div class="input-group ">
+
+
+
+                                            <span class="input-group-addon"><i class="fa fa-tag"></i></span>
+                                            <div class="icon-addon ">
+                                                
+                                                @Html.TextBox("searchString",ViewBag.CurrentFilter as string, new { @class = "form-control ",placeholder = "كلمة للبحث" })
+
+
+                                            </div>
+                                            <span class="input-group-btn">
+                                                <button type="submit" value="Search" class="btn btn-default"><span><i class="fa fa-search"></i> "بحث"</span></button>
+                                            </span>
+
+                                        </div>
+
+                                    </div> 
+                                    }
+                                </div>
+
+                            </div>
+                            <div class="dt-toolbar">
+                                <div class="col-xs-12 col-sm-6">
+                                    <div id="datatable_tabletools_filter" class="dataTables_filter">
+                                        <ul class="list-inline table-buttons">
+
+                                            <li><a href="@Url.Action("Create")" class="btn btn-labeled btn-primary"> <span class="btn-label"><i class="fa fa-plus"></i></span> إضافة جديد </a></li>
+
+
+                                        </ul>
+
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6">
+                                    <div id="datatable_tabletools_filter" class="dataTables_filter">
+                                        @*<ul class="list-inline table-buttons">
+                                            <li>
+                                                <a href="javascript:void(0);" class="btn btn-labeled btn-success"> <span class="btn-label"><i class="glyphicon glyphicon-thumbs-up"></i></span>Activate </a>
+                                            </li>
+
+                                            <li><a href="javascript:void(0);" class="btn btn-labeled btn-danger"> <span class="btn-label"><i class="glyphicon glyphicon-thumbs-down"></i></span>Deactivate </a></li>
+                                            <li>
+                                                <div class="btn-group">
+
+                                                    <div class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown"><span class="fa fa-tasks"></span>&emsp; Actions &emsp;</div>
+                                                    <button class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">
+                                                        <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li>
+                                                            <a href="@Url.Action("")"> More Actions</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="btn btn-primary"><i class="fa fa-refresh fa-lg"></i></a>
+                                            </li>
+
+                                        </ul>*@
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+
+
+                                <table class="table table-bordered table-striped table-condensed table-hover dataTable">
+                                    <thead>
+                                        <tr>
+                                            @*<th class="smart-form has-tickbox">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" name="checkbox-inline">
+                                                    <i></i>
+                                                </label>
+                                            </th>*@
+<#
+    IEnumerable<PropertyMetadata> properties = ModelMetadata.Properties;
+    foreach (PropertyMetadata property in properties) {
+        if (property.Scaffold && !property.IsPrimaryKey && !property.IsForeignKey) {
+#>
+<#
+            // This is a temporary work around until core scaffolding provides support for independent associations.
+            if (property.IsAssociation && GetRelatedModelMetadata(property) == null) {
+                continue;
+            }
+#>
+        <th>
+             @Html.DisplayNameFor(model => model.First().<#=                GetValueExpression(property) #>)
+        </th>
+<#
+        }
+    }
+#>
+        <th></th>
+    </tr>
+                                    </thead>
+                                    <tbody>
+
+@foreach (var item in Model) {
+    <tr>
+     @*<td class="smart-form has-tickbox">
+                                                    <label class="checkbox">
+                                                        <input type="checkbox" name="checkbox-inline">
+                                                        <i></i>
+                                                    </label>
+                                                </td>*@
+<#
+    foreach (PropertyMetadata property in properties) {
+        if (property.Scaffold && !property.IsPrimaryKey && !property.IsForeignKey) {
+#>
+<#
+            // This is a temporary work around until core scaffolding provides support for independent associations.
+            if (property.IsAssociation && GetRelatedModelMetadata(property) == null) {
+                continue;
+            }
+#>
+        <td>
+            @Html.DisplayFor(modelItem => <#=                "item." + GetValueExpression(property) #>)
+        </td>
+<#
+        }
+    }
+
+    string pkName = GetPrimaryKeyName();
+    if (pkName != null) {
+#>
+        <td>
+
+  <ul class="list-inline table-buttons">
+                                                        
+                                                        <li><a href="@Url.Action("Details", new { id = item.<#=            pkName #> })" class="btn btn-sm btn-default"> <span class="fa fa-eye"></span> تفاصيل </a></li>
+                                                        <li><a href="@Url.Action("Edit", new { id = item.<#=            pkName #> })" class="btn btn-sm btn-primary"><span class="fa fa-edit"></span> تعديل</a></li>
+                                                        @*<li><a href="@Url.Action("Delete", new { id = item.<#=            pkName #> })" class="btn btn-sm btn-danger"><span class="fa fa-minus"></span> حذف</a></li>*@
+
+                                                        @*<li>
+                                                            <div class="btn-group">
+
+                                                                <div class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown"><span class="fa fa-tasks"></span>&emsp; Actions &emsp;</div>
+                                                                <button class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">
+                                                                    <span class="caret"></span>
+                                                                </button>
+                                                                <ul class="dropdown-menu">
+                                                                    <li>
+                                                                        <a href="@Url.Action("Delete", new { id = item.<#=            pkName #> })">Delete</a>
+                                                                    </li>
+
+                                                                </ul>
+                                                            </div>
+                                                        </li>*@
+                                                    </ul>
+        </td>
+<#
+    } else {
+#>
+        <td>
+
+ <ul class="list-inline table-buttons">
+                                                        
+                                                        <li><a href="@Url.Action("Details", new {/* id=item.PrimaryKey */})" class="btn btn-sm btn-default"> <span class="fa fa-eye"></span> @WebHelper.GetResource("Details") </a></li>
+                                                        <li><a href="@Url.Action("Edit", new { /* id=item.PrimaryKey */ })" class="btn btn-sm btn-primary"><span class="fa fa-edit"></span> @WebHelper.GetResource("Edit")</a></li>
+                                                        <li><a href="@Url.Action("Delete", new {/* id=item.PrimaryKey */})" class="btn btn-sm btn-danger"><span class="fa fa-minus"></span> Delete</a></li>
+
+                                                        @*<li>
+                                                            <div class="btn-group">
+
+                                                                <div class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown"><span class="fa fa-tasks"></span>&emsp; Actions &emsp;</div>
+                                                                <button class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">
+                                                                    <span class="caret"></span>
+                                                                </button>
+                                                                <ul class="dropdown-menu">
+                                                                    <li>
+                                                                        <a href="@Url.Action("Delete", new { id = item.<#=            pkName #> })">Delete</a>
+                                                                    </li>
+
+                                                                </ul>
+                                                            </div>
+                                                        </li>*@
+                                                    </ul>
+        </td>
+<#
+    }
+#>
+    </tr>
+}
+</tbody>
+</table>
+
+                            </div>
+                            <div class="dt-toolbar-footer">
+                                <div class="col-sm-6 col-xs-12 hidden-xs">
+                                    <div class="dataTables_info" id="datatable_col_reorder_info" role="status" aria-live="polite">
+                                        صفحة <span class="txt-color-darken">@(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)</span>
+                                        من <span class="text-primary">@Model.PageCount</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-xs-12">
+                                    <div class="dataTables_paginate paging_simple_numbers" id="datatable_col_reorder_paginate">
+                                        @Html.PagedListPager(Model, page => Url.Action("Index", new { page, currentFilter = ViewBag.CurrentFilter }))
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end widget content -->
+
+                    </div>
+                    <!-- end widget div -->
+
+                </div>
+                <!-- end widget -->
+
+            </article>
+            <!-- WIDGET END -->
+        </div>
+        <!-- end row -->
+
+    </section>
+    <!-- end widget grid -->
+</div>
+<!-- END MAIN CONTENT -->
+
+
+
+
+
+
+
+
+
+<#
+    // The following code closes the tag used in the case of a view using a layout page and the body and html tags in the case of a regular view page
+#>
+<#
+    if(!IsPartialView && !IsLayoutPageSelected) {
+        ClearIndent();
+#>
+</body>
+</html>
+<#
+    }
+#>
+<#@ include file="ModelMetadataFunctions.cs.include.t4" #>

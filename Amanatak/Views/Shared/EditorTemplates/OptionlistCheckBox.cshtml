@@ -1,0 +1,10 @@
+﻿@model List<AlkawaderBLL.Models.Option>
+
+@foreach (var item in Model)
+{
+   
+    <input id="@(item.Name)" name="@(item.EvaluationParameterID + "Value")" type="checkbox" value="@(item.Name)" />
+    <label for="@(item.Name)">@(item.LName)</label>
+    <br />
+}
+
