@@ -1,0 +1,12 @@
+﻿
+div{
+      border: #5A5A5A dashed 1px;
+}
+p{
+    border: black dashed 1px;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+
+    border: #E5B709 dashed 1px;
+}

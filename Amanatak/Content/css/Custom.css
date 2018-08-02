@@ -1,0 +1,119 @@
+﻿
+/*body {
+    font-family: 'Droid Arabic Kufi';
+}*/
+* {
+    font-family: 'Cairo', sans-serif;
+}
+ 
+ 
+    .smart-style-3 #header {
+    /*background-image: linear-gradient(to bottom,#10403d,rgb(117, 141, 141))*/
+    background-image: linear-gradient(to bottom,#75908f,rgb(65, 99, 98));
+}
+.cusLogo {
+    background: rgba(246, 247, 249, 0) !important;
+   
+}
+#logo {
+    width: 175px;
+    margin-top: 3px !important;
+    margin-left: 0;
+}
+#logo {
+    margin-top: 3px;
+    margin-left: initial;
+}
+#logo img {
+    width: 105px !important;
+    height: 39px !important;
+    padding-left: 0;
+}
+.smart-style-3 #logo-group span#activity, .smart-style-3 .btn-header > :first-child > a {
+    background-image: linear-gradient(to bottom,#8c8a87,rgb(200, 182, 163));
+    border: 1px solid #575534;
+}
+
+.smart-style-3 #logo-group span#activity, .smart-style-3 .btn-header > :first-child > a:hover {
+       background-image: linear-gradient(to bottom,#8c8a87,rgb(200, 182, 163));
+    
+}
+
+.smart-style-3 .dropdown-menu > .active > a, .smart-style-3 .dropdown-menu > .active > a:hover, .smart-style-3 .dropdown-menu > li > a:focus, .smart-style-3 .dropdown-menu > li > a:hover, .smart-style-3 .tt-suggestion.tt-is-under-cursor {
+    background-color: #ec9519;
+    color: #fff;
+}
+
+aside#left-panel {
+   
+    background-color: #27b69a;
+}
+.smart-style-3 nav > ul > li.open {
+    border-left: none;
+}
+
+.smart-style-3 nav > ul > li.open {
+    border-left: none;
+    background-color: #6f8c8b;
+    /* background-image: linear-gradient(to bottom,#f9f9f9,#f2f2f2); */
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#6f8c8b),to(#6f8c8b));
+    background-image: -webkit-linear-gradient(top,#6f8c8b,#6f8c8b);
+    background-image: -o-linear-gradient(top,#6f8c8b,#6f8c8b);
+    background-image: linear-gradient(to bottom,#6f8c8b,#6f8c8b);
+}
+.smart-style-3 nav > ul > li {
+    background-color: #fff;
+    background-image: -moz-linear-gradient(top,#27b69a,#27b69a);
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#27b69a),to(#27b69a));
+    background-image: -webkit-linear-gradient(top,#27b69a,#27b69a);
+    background-image: -o-linear-gradient(top,#27b69a,#27b69a);
+    background-image: linear-gradient(to bottom,#27b69a,#27b69a);
+    
+}
+.smart-style-3 nav ul li a, .smart-style-3 nav ul li.open > a, .smart-style-3 nav ul li.open > a b {
+    color: #ffffffe0 !important;
+}
+.smart-style-3 nav > ul > li {
+   
+    border-bottom: 1px solid #dfdfdf00;
+}
+/*input[type="text"] , select , input[type=datetime],input[type=number]  {
+    display: block;
+    width: 100%;
+    height: 40px;
+    text-shadow: 0px 0px 0px rgb(0, 0, 0) !important;
+    font-size: 17px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}*/
+
+.header-v5 .navbar-default .navbar-toggle .icon-bar {
+    background: #fff !important;
+}
+.header-v5 .navbar-default .navbar-toggle:hover, .header-v5 .navbar-default .navbar-toggle:focus {
+    background: #003331 !important;
+}
+.smart-style-3 .dropdown-menu {
+    border-radius: 0;
+    border-bottom: 2px solid #adadad;
+    background: #fff;
+}
+
+/*.datetimepicker.datetimepicker-rtl {
+    right: 604.238px !important;
+    left: unset !important;
+}*/
+.smart-rtl .dropdown-menu {
+   
+    right: initial;
+    
+}

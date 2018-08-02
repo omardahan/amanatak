@@ -1,0 +1,123 @@
+﻿@model AmanatakBLL.Models.Country
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+
+
+
+<!-- MAIN CONTENT -->
+<div id="content">
+    <!-- row -->
+    <div class="row">
+        <!-- col -->
+        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
+            <h1 class="page-title txt-color-blueDark">
+                <!-- PAGE HEADER -->
+               
+                
+                <span>
+                
+                </span>
+            </h1>
+        </div>
+        <!-- end col -->
+        <!-- right side of the page with the sparkline graphs -->
+        <!-- col -->
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+            <!-- sparks -->
+           
+            <!-- end sparks -->
+        </div>
+        <!-- end col -->
+    </div>
+    <!-- end row -->
+    <!-- widget grid -->
+    <section id="widget-grid">
+        <!-- row -->
+        <div class="row">
+            <!-- NEW WIDGET START -->
+            <article class="col-sm-12 col-md-12 col-lg-8 col-lg-offset-2">
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
+                     data-widget-deletebutton="false">
+                   
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-plus"></i> </span>
+                        <h2>Create</h2>
+                    </header>
+                    <!-- widget div-->
+                    <div>
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                            <!-- This area used as dropdown edit box -->
+                        </div>
+                        <!-- end widget edit box -->
+                        <!-- widget content -->
+                        <div class="widget-body">
+
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Country</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+        </div>
+
+       
+
+ <div class="form-actions">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <a class="btn btn-default" type="button" href="@Url.Action("Index")">
+                                                   عودة إلى القائمة
+                                                </a>
+                                                <button class="btn btn-primary" type="submit">
+                                                    <i class="fa fa-save"></i>
+                                                   إنشاء
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+    </div>
+}
+
+    </div>
+                        <!-- end widget content -->
+                    </div>
+                    <!-- end widget div -->
+                </div>
+                <!-- end widget -->
+
+            </article>
+            <!-- WIDGET END -->
+        </div>
+        <!-- end row -->
+
+    </section>
+    <!-- end widget grid -->
+</div>
+<!-- END MAIN CONTENT -->
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

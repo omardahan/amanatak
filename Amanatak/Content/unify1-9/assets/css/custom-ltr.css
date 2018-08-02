@@ -1,0 +1,514 @@
+.SelectiInput {
+    border-color: rgba(214,214,214,.5);
+    background: transparent;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 20px;
+    height: 50px;
+    border-color: rgba(214,214,214,.5);
+}
+
+    .Myinput {
+        width: 100%;
+        padding: 20px;
+        margin: 12px 0;
+       
+        transition: all 0.1s;
+        font-size: 20px;
+    }
+    @media screen and (max-width: 600px) {
+  .Myinput {
+    margin:35px 0;
+  }
+    .Myinput + .Mylabel {
+          top: -30px !important;
+    }
+}
+
+        .Myinput + .Mylabel {
+         position: absolute;
+    top: -20px;
+     left: 20px; 
+    color: #827906;
+    font-size: 20px;
+    transition: all 0.5s;
+    opacity: 1;
+    /* background: white; */
+    border-width: 0 2px 0 2px;
+    padding: 0 5px;
+        }
+    .Myinput:placeholder-shown + label {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    .well {
+        background-color: #fbfbfb;
+    }
+
+
+
+/* Add here all your css styles (customizations) */
+/* Add here all your css styles (customizations) */
+/* Add here all your css styles (customizations) */
+@font-face {
+    font-family: 'cairo';
+    /*src: url('din-next-lt-arabic-light.otf');*/
+}
+
+body {
+    font-family: 'cairo';
+    font-size: 17px;
+    font-weight: 400;
+   
+    text-shadow: 0px 0px 0px rgb(0, 0, 0) !important;
+}
+
+p {
+    padding-top: 10px;
+    font-family: 'cairo';
+    font-stretch: condensed;
+    line-height: 20px;
+    font-size: 20px;
+    margin: 0 0 10px;
+    text-shadow: 0px 0px 0px rgb(0, 0, 0);
+}
+
+.pricing-content li i {
+    color: #3B67A2;
+    font-size: 16px;
+    margin-left: 12px;
+    position: relative;
+}
+
+.profile .timeline-v2.timeline-me:before {
+    right: 19%;
+}
+
+.profile .timeline-v2.timeline-me:before {
+    right: 19%;
+}
+
+.profile .timeline-v2.timeline-me > li .cbp_tmicon {
+    right: 19%;
+}
+
+.pull-right {
+}
+
+h2.panel-title.heading-sm.pull-left {
+    float: right !important;
+}
+
+.profile .timeline-v2.timeline-me > li .cbp_tmlabel {
+    padding: 0;
+    background: inherit;
+}
+
+.profile .timeline-v2.timeline-me > li .cbp_tmlabel {
+    padding: 0;
+    background: inherit;
+    margin: 0 24% 19px 0;
+}
+
+time.cbp_tmtime {
+    right: -10%;
+}
+
+.header .navbar-default .navbar-nav > li > a {
+    font-family: 'cairo';
+    font-stretch: condensed;
+    color: #687074;
+    font-size: 20px;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+    /* float: left; */
+    .dl-horizontal dt {
+        width: 160px;
+        overflow: hidden;
+        clear: left;
+        text-align: right;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+.header .topbar ul.languages li a {
+    font-family: 'cairo';
+    font-stretch: condensed;
+    color: #555;
+    display: block;
+    font-size: 13px;
+    padding: 2px 12px;
+    margin-bottom: 1px;
+    text-transform: uppercase;
+}
+
+.header .topbar ul.loginbar > li > a, .header .topbar ul.loginbar > li > a:hover {
+    font-family: 'cairo';
+    font-stretch: condensed;
+    color: #7c8082;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.sky-form .select i {
+    right: 92%;
+    left: 13px;
+}
+
+.sky-form .col {
+    float: right;
+}
+
+.profile .date-formats {
+    color: #fff;
+    float: left;
+    text-align: center;
+    background: #5CB85C;
+    margin: 7px 13px 0 0;
+    padding: 7px 10px 4px;
+}
+
+@media (min-width: 768px) {
+    .form-inline .form-group {
+        display: inline-block;
+        margin-bottom: 0;
+        vertical-align: middle;
+        margin-top: 5px;
+        /*width: 100%;*/
+    }
+}
+
+.col-md-9 select {
+    margin-right: 10px;
+}
+
+.header .topbar ul.languages {
+    right: 0;
+}
+
+
+
+.select2-container .select2-choice {
+    background: #f0fff0;
+}
+
+.select2-results {
+    direction: ltr;
+}
+
+.wizard > .steps .number {
+    float: right;
+    margin-left: 15px;
+}
+
+.wizard > .steps > ul > li {
+    margin-right: 30px;
+}
+
+    .wizard > .steps > ul > li:first-child {
+        margin-right: 0;
+    }
+
+.wizard > .steps i {
+    left: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    /*color: #585f69;*/
+    margin-top: 5px;
+    text-shadow: none;
+    font-family: 'cairo' !important;
+}
+
+.content {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font-size: 17px !important;
+    color: #808285 !important;
+    text-align: justify;
+}
+
+h2.heading-md {
+    font-size: 24px;
+    /* font-weight: inherit; */
+    line-height: 24px;
+}
+
+.bg-color-yellow {
+    background-color: #E5B709 !important;
+    color: #39568E;
+}
+
+.menu-on-top .menu-item-parent {
+    max-width: 100%;
+    min-width: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    font-size: 17px;
+}
+
+.menu-on-top aside#left-panel nav > ul > li > a {
+    display: inline-block;
+    height: 68px;
+    text-shadow: 0px 0px 0px rgb(0, 0, 0) !important;
+    font-size: 17px;
+    text-decoration: none;
+    line-height: 22px;
+    padding: 10px 9px !important;
+}
+
+.menu-on-top nav ul ul li a {
+    padding-left: 10px !important;
+    font-size: 16px;
+}
+
+ul ul li a {
+    padding-left: 10px !important;
+    font-size: 16px;
+}
+
+.page-title span {
+    font-size: 20px;
+    color: #333;
+    display: inline-block;
+    vertical-align: 1px;
+}
+
+.jarviswidget > div {
+    font-size: 18px;
+}
+
+.note {
+    margin-top: 6px;
+    padding: 0 1px;
+    font-size: 14px;
+    line-height: 15px;
+    color: #999;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 40px;
+    text-shadow: 0px 0px 0px rgb(0, 0, 0) !important;
+    font-size: 17px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid rgba(0, 0, 0, 0.24) white-space: nowrap;
+    /*padding: 6px 12px;*/
+  
+    line-height: 1.42857143;
+    border-radius: 2px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.fc-border-separate thead tr, .table thead tr {
+    background-color: #eee;
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#f2f2f2),to(#fafafa));
+    background-image: -webkit-linear-gradient(top,#f2f2f2 0,#fafafa 100%);
+    background-image: -moz-linear-gradient(top,#f2f2f2 0,#fafafa 100%);
+    background-image: -ms-linear-gradient(top,#f2f2f2 0,#fafafa 100%);
+    background-image: -o-linear-gradient(top,#f2f2f2 0,#fafafa 100%);
+    background-image: -linear-gradient(top,#f2f2f2 0,#fafafa 100%);
+    font-size: 16px;
+}
+
+.show-stat-microcharts > div {
+    border-right: 1px solid #dadada !important;
+    border-top: 1px solid #dadada !important;
+    margin-top: 10px !important;
+    height: 100px;
+    overflow: hidden;
+    padding: 7px 9px;
+}
+
+.label {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 55%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+
+.easy-pie-title {
+    display: inline-block;
+    margin: 10px 6px 0;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    width: initial;
+   
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-left: 24px;
+}
+
+/*.fc-event-container > * {
+    z-index: -1;
+}*/
+
+.fc-event-inner {
+    width: 100%;
+    height: 100%;
+    overflow: inherit;
+}
+ul.ememFont li {
+    font-size: 1em;
+    margin: 0px;
+}
+ul.ememFont {
+   padding:inherit;
+}
+.fc-event {
+    cursor: pointer;
+  
+}
+
+.btn-group {
+    border-color: #ccc;
+}
+
+.bg-color-Payables {
+    background-color: white;
+}
+
+.fc-view {
+    position: relative;
+    width: 100%;
+    overflow: inherit;
+}
+
+.widget-body-toolbar .btn-xs {
+    margin-top: -5px;
+}
+
+.inbox-side-bar {
+    height: 100%;
+    background: #fff;
+    display: block;
+    width: 100%;
+    padding: 10px 0 10px 14px;
+    -webkit-overflow-scrolling: touch;
+    z-index: 1;
+}
+
+@media (max-width: 1024px) {
+
+    .inbox-side-bar {
+        display: block !important;
+    }
+}
+
+
+
+#left-panel {
+    /*padding-top: 88px;*/
+    padding-top: 70px;
+}
+
+.fixed-header #main {
+    /*margin-top: 80px;*/
+    margin-top: 110px;
+}
+
+/*header command aside menu customization*/
+
+#header h3 small {
+    color: black;
+    font-weight: bold;
+}
+
+#header h3 {
+    background: rgba(237, 237, 237, 0.75);
+}
+
+.DefaultALK aside {
+    background: #02040A;
+    background: linear-gradient(to right,#6F6F6F 93%,#777777 100%);
+}
+
+    .DefaultALK aside nav {
+        background-image: url(../../../images/sysleftAr.jpg);
+        background-size: 100% 100%;
+        /*background: linear-gradient(to right,#6F6F6F 93%,#777777 100%);*/
+    }
+
+.DefaultALK .fixed-navigation nav > ul {
+    height: initial;
+    background: linear-gradient(to top, rgba(8, 69, 123, 0.76), #31659c);
+    /*Standard*/
+}
+
+.DefaultALK .login-info {
+    background: linear-gradient(to top, #08457b, #31659c); /*Standard*/
+}
+
+.DefaultALK #header {
+    background-image: url(../../../images/sysheaderar.jpg);
+    background-size: 100% 100%;
+}
+
+    .DefaultALK #header > :first-child, aside {
+        background-color: rgba(255, 255, 255, 0);
+    }
+
+.dl-horizontal dt {
+    text-align: right !important;
+}
+
+.select2-container .select2-choice .select2-arrow {
+    right: 0;
+}
+.sky-form .ui-slider-handle {
+    border: 2px solid #d8c900 !important;
+    background: #d8c900 !important;
+}
+
+.sky-form .ui-slider {
+    border: 4px solid #e5e5e5 !important;
+    cursor: pointer;
+    margin: 12px 6px 26px !important;
+}
+.sky-form {
+    box-shadow: 0 0 0px rgba(0,0,0,.3) !important;
+    font: 'Cairo' !important;
+    color: #666;
+    border: 0px !important;
+}
+
+
+/*header command aside menu customization END*/ 

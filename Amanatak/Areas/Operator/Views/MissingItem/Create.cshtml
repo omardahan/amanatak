@@ -1,0 +1,240 @@
+﻿@using Amanatak.Models
+@model MissingItemViewModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<!-- Latest compiled and minified CSS -->
+<!-- MAIN CONTENT -->
+<div id="content">
+    <!-- row -->
+    <div class="row">
+        <!-- col -->
+        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
+            <h1 class="page-title txt-color-blueDark">
+                <!-- PAGE HEADER -->
+
+
+                <span>
+
+                </span>
+            </h1>
+        </div>
+        <!-- end col -->
+        <!-- right side of the page with the sparkline graphs -->
+        <!-- col -->
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+            <!-- sparks -->
+            <!-- end sparks -->
+        </div>
+        <!-- end col -->
+    </div>
+    <!-- end row -->
+    <!-- widget grid -->
+    <section id="widget-grid">
+        <!-- row -->
+        <div class="row">
+            <!-- NEW WIDGET START -->
+            <article class="col-sm-12 col-md-12 col-lg-8 col-lg-offset-2">
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
+                     data-widget-deletebutton="false">
+
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-plus"></i> </span>
+                    </header>
+                    <!-- widget div-->
+                    <div>
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                            <!-- This area used as dropdown edit box -->
+                        </div>
+                        <!-- end widget edit box -->
+                        <!-- widget content -->
+                        <div class="widget-body">
+
+
+
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+
+                                <div class="form-horizontal">
+                                    <hr />
+                                    @Html.ValidationSummary(true)
+
+
+
+                                    <div class="form-group">
+                                        @Html.Label("النوع", null, new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.DropDownListFor(model => model.Item.ItemTypeId, ViewBag.ItemTypeId as SelectList, "يرجى إختيار" + " " + "نوع القطعة المفقودة", new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.Item.ItemTypeId)
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.Label("التفاصيل", null, new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.TextAreaFor(model => model.Item.ItemDetails, new { @class = "control-control", @style = "width:100%" })
+                                            @Html.ValidationMessageFor(model => model.Item.ItemDetails)
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.Label("أين وجدت", null, new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.Item.AdressFound, new { @style = "width:100%" })
+                                            @Html.ValidationMessageFor(model => model.Item.AdressFound)
+                                        </div>
+                                    </div>
+
+
+                                    @**OwnerInfo*@
+                                    <div class="form-group">
+                                        @Html.Label("اسم المالك", null, new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.ItemOwner.FirstName)
+                                            @Html.ValidationMessageFor(model => model.ItemOwner.FirstName)
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.Label("الإسم الاخير", null, new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.ItemOwner.LastName)
+                                            @Html.ValidationMessageFor(model => model.ItemOwner.LastName)
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.Label("الإسم الأوسط", null, new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.ItemOwner.MiddleName)
+                                            @Html.ValidationMessageFor(model => model.ItemOwner.MiddleName)
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.Label("اسم الأب", null, new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.ItemOwner.FatherName)
+                                            @Html.ValidationMessageFor(model => model.ItemOwner.FatherName)
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.Label("اسم الام", null, new { @class = "control-label col-md-2" })            <div class="col-md-10">
+                                            @Html.EditorFor(model => model.ItemOwner.MotherName)
+                                            @Html.ValidationMessageFor(model => model.ItemOwner.MotherName)
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.Label("تاريخ الميلاد", null, new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.ItemOwner.DateOfBirth, "DateNTime")
+                                            @Html.ValidationMessageFor(model => model.ItemOwner.DateOfBirth)
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.Label("الجنسية", null, new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.DropDownListFor(model => model.ItemOwner.NationalityId, ViewBag.NationalityId as SelectList, "يرجى إختيار" + " " + "الجتسية", new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.ItemOwner.NationalityId)
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.Label("الجنس", null, new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.RadioButtonFor(model => model.ItemOwner.Gender, true) ذكر  @Html.RadioButtonFor(model => model.ItemOwner.Gender, false) انثى
+
+
+                                            @Html.ValidationMessageFor(model => model.ItemOwner.Gender)
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.Label("نوع الهوية", null, new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            <div class="col-md-10">
+                                                @Html.DropDownListFor(model => model.ItemOwner.IdentificationID, ViewBag.IdentificationID as SelectList, "يرجى إختيار" + " " + "نوع الهوية", new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(model => model.ItemOwner.IdentificationID)
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.Label("رقم الهوية/جواز السفر ", null, new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.ItemOwner.IdentificationNo)
+                                            @Html.ValidationMessageFor(model => model.ItemOwner.IdentificationNo)
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.Label("جوال", null, new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.ItemOwner.Mobile)
+                                            @Html.ValidationMessageFor(model => model.ItemOwner.Mobile)
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.Label("البريد الإلكتروني", null, new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.TextBoxFor(model => model.ItemOwner.Email, new { @class = "control-control", @style = "width:100%", @type = "email" })
+                                            @Html.ValidationMessageFor(model => model.ItemOwner.Email)
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.Label("عنوان الشخص", null, new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.ItemOwner.Address)
+                                            @Html.ValidationMessageFor(model => model.ItemOwner.Address)
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-actions">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <a class="btn btn-default" type="button" href="@Url.Action("Index")">
+                                                    عودة إلى القائمة
+                                                </a>
+                                                <button class="btn btn-primary" type="submit">
+                                                    <i class="fa fa-save"></i>
+                                                    إنشاء
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            }
+
+                        </div>
+                        <!-- end widget content -->
+                    </div>
+                    <!-- end widget div -->
+                </div>
+                <!-- end widget -->
+
+            </article>
+            <!-- WIDGET END -->
+        </div>
+        <!-- end row -->
+
+    </section>
+    <!-- end widget grid -->
+</div>
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

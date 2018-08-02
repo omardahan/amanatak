@@ -1,0 +1,42 @@
+﻿<link href="~/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+
+
+
+
+
+<script src="~/Scripts/plugin/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
+<script type="text/javascript" src="~/Scripts/plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="~/Scripts/plugin/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.ar.js" charset="UTF-8"></script>
+
+@model DateTime?
+
+@Html.TextBox("", (Model.HasValue ? Model.Value.ToString("yyyy-MM-dd hh:mm") : string.Empty), new { @class = "form-control AddDateTime", type = "text" })
+
+
+<script type="text/javascript">
+   
+    $('#StartTime').datetimepicker({
+        language:  'en',
+        format: 'yyyy-mm-dd hh:ii',
+        weekStart: 1,
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        forceParse: 0,
+        showMeridian: 1
+    });
+   
+
+    $('.AddDateTime').datetimepicker({
+        language: 'en',
+        format: 'yyyy-mm-dd hh:ii',
+        weekStart: 1,
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        forceParse: 0,
+        showMeridian: 1
+    });
+</script>

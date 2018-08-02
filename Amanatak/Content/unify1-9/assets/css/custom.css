@@ -1,0 +1,540 @@
+/* Add here all your css styles (customizations) */
+.header-v5.header-sticky.header-fixed-shrink .topbar-v3 .topbar-logo,.header-v5.header-sticky.header-fixed-shrink .topbar-v3 .input-group,
+.header-sticky .navbar  .navbar-brand
+ {
+    display: none;
+}
+.header-sticky .navbar  .navbar-nav
+ {
+    margin:0;
+}
+.header-fixed-shrink  .navbar  .navbar-brand
+{
+   display: block;
+}
+.Slider-MarginFix{
+        margin-top: 9%;
+}
+.g-bg-ThemeDarkGreen{
+    background-color:#103331 !important;
+}
+.g-bg-ThemeLightDarkGreen{
+    background-color:#003331 !important;
+}
+.g-bg-ThemeYellow1{
+    background-color:#D8C900 !important;
+}
+
+.navThemeColor{
+    min-height: 70px;
+    background: linear-gradient(to bottom, white 24%,#003331 23%,#003331 50%,#003331 50%,#003331 100%) !important;
+}
+*{
+    /*font-family: 'Cairo', sans-serif;*/
+    /*color:#001f1d !important;*/
+}
+.topbar-v3{
+    background-color:white;
+        padding: 30px  0;
+}
+
+@media (min-width: 992px)
+{
+.header-v5 .navbar-default .navbar-nav > li > a {
+       padding: 0px 18px 0px;
+}
+}
+ @media (min-width: 768px)
+ {
+ 
+.navbar {
+    border-radius: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+ }
+ .header-v5 .navbar-default .navbar-nav > li > a:hover, .header-v5 .navbar-default .navbar-nav > .active > a {
+    border-top: none;
+}
+ .header-fixed .header-v5.header-fixed-shrink .navbar-brand {
+    top: 15px;
+    z-index: 1;
+    position: relative;
+    padding: 0px 23px 9px;
+}
+
+ .header-fixed .header-v5.header-fixed-shrink .navbar-nav > li > a {
+   
+    padding: 5px 10px 12px;
+}
+.header-fixed .header-v5.header-fixed-shrink {
+ 
+    height: auto;
+}
+
+.Themecircle {
+    border-radius: 50% !important;
+    width: 150px;
+    height: 150px;
+    border: solid #d6c729 6px;
+        margin: auto;
+	/* width and height can be anything, as long as they're equal */
+}
+.ThemeCircleContainer {
+    text-align: center;
+}
+
+
+.ThemePanel {
+     border-color: #ffffff;
+}
+
+.ThemePanel > .panel-heading {
+    background: #d6c729;
+}
+.ThemePanel > .panel-body {
+    background-color:#003331 ;
+    color: white;
+}
+.ThemePanel .panel-body h4,.ThemePanel .panel-body p {
+    color: white;
+}
+
+.padding-top-25 {
+    padding-top: 25px;
+}
+.center{
+    text-align:center;
+}
+
+.rtl-right{
+    float:left !important;
+}
+.ThemeFooterCopyright{
+    bottom: -122px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Add here all your css styles (customizations) */
+/*@font-face {
+    font-family: FontAwesome
+    src:url('Bahij Palatino Arabic-Regular.ttf');
+}*/
+.menu-on-top .menu-item-parent {
+    /*font-family: FontAwesome;*/
+    max-width: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    font-stretch: expanded;
+    font-size: 13px;
+}
+
+.menu-on-top aside#left-panel nav > ul > li > a {
+    /*font-family: FontAwesome;*/
+    display: inline-block;
+    height: 68px;
+    text-shadow: none !important;
+    font-size: 13px;
+    text-decoration: none;
+    line-height: 22px;
+    font-stretch: expanded;
+    padding: 10px 9px !important;
+}
+
+th {
+    /*font-family: FontAwesome;*/
+    font-size: 15px;
+    font-stretch: expanded;
+}
+
+input#searchString {
+    /*font-family: FontAwesome;*/
+    font-size: 18px;
+    font-stretch: expanded;
+}
+
+select#UIState {
+    /*font-family: FontAwesome;*/
+    font-size: 16px;
+    font-stretch: expanded;
+}
+
+div.dataTables_info {
+    /*font-family: FontAwesome;*/
+    padding-top: 9px;
+    font-size: 13px;
+    font-weight: 700;
+    font-style: italic;
+    font-stretch: expanded;
+    color: #969696;
+}
+
+.menu-on-top nav ul ul li a {
+    /*font-family: FontAwesome;*/
+    padding-left: 10px !important;
+    font-stretch: expanded;
+    font-size: 13px;
+}
+
+h1 {
+    /*font-family: FontAwesome;*/
+    letter-spacing: -1px;
+    font-size: 30px;
+    font-stretch: expanded;
+    margin: 10px 0;
+}
+
+.page-title span {
+    /*font-family: FontAwesome;*/
+    font-size: 22px;
+    color: #333;
+    font-stretch: expanded;
+    display: inline-block;
+    vertical-align: 1px;
+    font-family: FontAwesome
+}
+
+.btn-group-sm > .btn, .btn-sm {
+    /*font-family: FontAwesome;*/
+    padding: 5px 10px;
+    font-size: 14px;
+    font-stretch: expanded;
+    font-weight: 600;
+    line-height: 1.5;
+    border-radius: 2px;
+}
+
+.jarviswidget > div {
+    /*font-family: FontAwesome;*/
+    font-stretch: expanded;
+    font-size: 17px;
+}
+
+.smart-rtl th {
+    /*font-family: FontAwesome;*/
+    font-stretch: expanded;
+    font-size: 16px;
+}
+
+b, strong {
+    /*font-family: FontAwesome;*/
+    font-stretch: expanded;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.form-control {
+    /*font-family: FontAwesome;*/
+    font-stretch: expanded;
+    display: block;
+    width: 100%;
+    height: 32px;
+    padding: 6px 12px;
+    font-size: 17px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.btn-default {
+    /*color: #333;
+    background-color: #fff;
+    border-color: #ccc;*/
+}
+
+.btn {
+    /*font-family: FontAwesome;*/
+    font-stretch: expanded;
+    font-weight: 600;
+    font-size: 14px;
+    /*padding: 5px;*/
+    /*margin-right: 2px!important;*/
+}
+
+body {
+    /*font-family: FontAwesome;*/
+    font-stretch: expanded;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
+
+ul.list-unstyled {
+    font-stretch: expanded;
+    font-size: 18px;
+    font-weight: 100;
+}
+
+.jarviswidget > header h2 {
+    /*font-family: FontAwesome;*/
+    font-size: 19px;
+    font-weight: 400;
+}
+
+.bootstrap-duallistbox-container label, .form header, legend {
+    /*font-family: FontAwesome;*/
+    font-stretch: expanded;
+    display: block;
+    padding: 8px 0;
+    border-bottom: 1px dashed rgba(0,0,0,.2);
+    background: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    color: #222;
+    margin: 25px 0 20px;
+}
+
+.h1 .small, .h1 small, .h2 .small, .h2 small, .h3 .small, .h3 small, h1 .small, h1 small, h2 .small, h2 small, h3 .small, h3 small {
+    font-size: 71%;
+}
+
+@media (min-width: 768px) {
+    .form-inline .form-group {
+        display: inline-block;
+        margin-bottom: 0;
+        vertical-align: middle;
+        margin-top: 5px;
+        width: 100%;
+    }
+}
+
+.col-md-9 select {
+    margin-right: 10px;
+}
+
+.select2-container .select2-choice .select2-arrow {
+    right: 0;
+}
+
+.select2-container .select2-choice {
+    background: #f0fff0;
+}
+
+.select2-results {
+    direction: ltr;
+}
+
+.wizard > .steps .number {
+    float: left;
+    margin-right: 15px;
+}
+
+.wizard > .steps > ul > li {
+    margin-left: 30px;
+}
+
+    .wizard > .steps > ul > li:first-child {
+        margin-left: 0;
+    }
+
+.wizard > .steps i {
+    right: 20px;
+}
+
+h2.heading-md {
+    font-size: 24px;
+    /* font-weight: inherit; */
+    line-height: 24px;
+}
+
+p {
+    text-shadow: 0px 0px 0px rgb(0, 0, 0);
+}
+
+.bg-color-red {
+    background-color: #39568E !important;
+    color: #E5B709;
+}
+
+.bg-color-yellow {
+    background-color: #E5B709 !important;
+    color: #39568E;
+}
+
+.easy-pie-chart .percent {
+    color: #444;
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: -10px;
+    position: absolute;
+    top: 50%;
+    width: 157%;
+    text-align: center;
+}
+
+
+.show-stat-microcharts > div {
+    border-right: 1px solid #dadada !important;
+    border-top: 1px solid #dadada !important;
+    margin-top: 10px !important;
+    height: 100px;
+    overflow: hidden;
+    padding: 7px 9px;
+}
+
+.label {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 55%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+
+.easy-pie-title {
+    display: inline-block;
+    margin: 10px 6px 0;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    width: initial;
+    height: 19px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-left: 24px;
+}
+
+.fc-event-container > * {
+    z-index: -1;
+}
+
+.fc-event-inner {
+    width: 100%;
+    height: 100%;
+    overflow: inherit;
+}
+
+button.btn.btn-default.btn-sm.dropdown-toggle {
+    border-radius: 25px;
+}
+
+.bg-color-Payables {
+    background-color: white;
+}
+
+.fc-view {
+    position: relative;
+    width: 100%;
+    overflow: inherit;
+}
+
+.inbox-side-bar {
+    height: 100%;
+    background: #fff;
+    display: block;
+    width: 100%;
+    padding: 10px 0 10px 14px;
+    -webkit-overflow-scrolling: touch;
+    z-index: 1;
+}
+
+@media (max-width: 1024px) {
+
+    .inbox-side-bar {
+        display: block !important;
+    }
+}
+
+/*header command aside menu customization*/
+#header {
+    /*height: 88px;*/
+    height: 125px;
+}
+
+    #header h3 {
+        background: rgba(237, 237, 237, 0.75);
+    }
+
+#left-panel {
+    /*padding-top: 88px;*/
+    padding-top: 125px;
+}
+
+#header h3 small {
+    color: black;
+    font-weight: bold;
+}
+
+.fixed-header #main {
+    /*margin-top: 80px;*/
+    margin-top: 110px;
+}
+
+.DefaultALK aside {
+    background: #02040A;
+    background: linear-gradient(to right,#6F6F6F 93%,#777777 100%);
+}
+
+    .DefaultALK aside nav {
+        background-image: url(../../../images/sysleft.jpg);
+        background-size: 100% 100%;
+        /*background: linear-gradient(to right,#6F6F6F 93%,#777777 100%);*/
+    }
+
+.DefaultALK .fixed-navigation nav > ul {
+    height: initial;
+    background: linear-gradient(to top, rgba(8, 69, 123, 0.76), #31659c);
+    /*Standard*/
+}
+
+.DefaultALK .login-info {
+    background: linear-gradient(to top, #08457b, #31659c); /*Standard*/
+}
+
+.DefaultALK #header {
+    background-image: url(../../../images/sysheader.jpg);
+    background-size: 100% 100%;
+}
+
+    .DefaultALK #header > :first-child, aside {
+        background-color: rgba(255, 255, 255, 0);
+    }
+
+.dl-horizontal dt {
+    text-align: left;
+}
+
+/*header command aside menu customization END*/ 
