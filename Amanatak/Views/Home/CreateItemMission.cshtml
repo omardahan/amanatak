@@ -6,8 +6,7 @@
 @model MissingItemViewModel
 
 <head>
-    <title>Advanced Layout Forms | Unify - Responsive Website Template</title>
-
+<title>اضافة بلاغ عن مفقودات</title>
     <link rel="shortcut icon" href="~/Content/img/icon.png" type="image/x-icon">
     <link rel="icon" href="~/Content/img/icon.png" type="image/x-icon">    <!-- Web Fonts -->
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin">
@@ -87,7 +86,7 @@
             <div class="col-md-5"></div>
             <div class="col-md-2">
                 <a href="#intro">
-                    <img src="~/Content/homePageCss/assets/img/logo.png" alt="Logo">
+                    <img src="~/Content/homePageCss/assets/img/logo.png" onclick="GoToHome();" alt="Logo">
                     @*<img class="shrink-pace logo" src="~/Content/homePageCss/assets/img/logo.png" alt="Logo">*@
                 </a>
             </div>
@@ -273,3 +272,9 @@
         });
     </script>
 </body>
+<script>
+      function GoToHome() {
+            window.open("@Url.Action("Index", "Home",new { @_self="_self" })")
+
+        }
+</script>
