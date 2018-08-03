@@ -43,10 +43,13 @@
     background-color: #ec9519;
     color: #fff;
 }
+aside {
+    background: #3a3633!important;
+    background: linear-gradient(to right,#39568e 93%,#39568e 100%);
+}
 
 aside#left-panel {
-   
-    background-color: #27b69a;
+    background-color: #3a3633!important;
 }
 .smart-style-3 nav > ul > li.open {
     border-left: none;

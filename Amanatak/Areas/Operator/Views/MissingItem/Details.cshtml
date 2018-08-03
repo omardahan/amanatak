@@ -1,4 +1,5 @@
-﻿@model AmanatakBLL.Models.Item
+﻿@using Amanatak.Models
+@model MissingItemViewModel
 
 @{
     ViewBag.Title = "Details";
@@ -8,7 +9,7 @@
 
 
 
-
+<title>  تفاصيل بلاغ عن مفقودات</title>
 
 
 <!-- MAIN CONTENT -->
@@ -19,8 +20,7 @@
         <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
             <h1 class="page-title txt-color-blueDark">
                 <!-- PAGE HEADER -->
-                <i class="fa-fw fa fa-home"></i>
-                
+                 
           
             </h1>
         </div>
@@ -45,7 +45,7 @@
                    
                     <header>
                         <span class="widget-icon"> <i class="fa fa-eye"></i> </span>
-                        <h2>Details</h2>
+                        <h2>تفاصيل</h2>
                     </header>
                     <!-- widget div-->
                     <div>
@@ -64,79 +64,129 @@
 
                             <div>
                                 <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ItemType.Name)
-        </dt>
+                                    <dt>
+                                        التصنيف
 
-        <dd>
-            @Html.DisplayFor(model => model.ItemType.Name)
-        </dd>
+                                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SerialNumber)
-        </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.Item.ItemType.Name)
+                                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.SerialNumber)
-        </dd>
+                                    <dt>
+                                        رقم الطلب
+                                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ItemDetails)
-        </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.Item.SerialNumber)
+                                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.ItemDetails)
-        </dd>
+                                    <dt>
+                                        الوصف
+                                    </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.Item.ItemDetails)
+                                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.UserType)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.UserType)
-        </dd>
+                                    <dt>
+                                        الإسم الكامل
+                                    </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.ItemOwner.FullName)
+                                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.UserId)
-        </dt>
+                                    <dt>
+                                        رقم الهوية
+                                    </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.ItemOwner.IdentificationNo)
+                                    </dd>
+                                    <dt>
+                                        جوال
+                                    </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.ItemOwner.Mobile)
+                                    </dd>
+                                    <dt>
+                                        الجنسية
+                                    </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.ItemOwner.Nationality.Name)
+                                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.UserId)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DateCreated)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DateCreated)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UserCreated)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UserCreated)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DateModified)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DateModified)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UserModified)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UserModified)
-        </dd>
 
     </dl>
+
+
+                                <div id="content">
+
+                                     
+
+                                    <!-- row -->
+                                    @using (Html.BeginForm("DeliveryItem", "MissingItem", FormMethod.Get))
+                                    {
+                                        if (Model.Item.Deliveried == false)
+                                        {
+                                    <div class="row">
+                                      <div class="form-group">
+                                          <div class="form-horizontal">
+                                               <div class="col-md-10">
+                                                  @Html.TextBox("SerialNumber",null, new {@placeHolder= "رقم الطلب إن وجد",     @class = "form-control" })
+                                              </div>
+                                              @Html.Hidden("ItemId", Model.Item.Id)
+                                          </div>
+                                          <div class="form-group">
+
+                                              <div class="col-md-10">
+                                                  @Html.TextBox("DeliveryNamePerson", null , new {  @placeHolder = "اسم الشخص" ,@class="form-control"})
+
+
+                                                  
+                                               </div>
+                                          </div>
+                                        <div class="form-group">
+                                            
+                                            <div class="col-md-10">
+                                                @Html.TextArea("Details", new { @class = "control-control", @style = "width:100%" ,@placeHolder= "تفاصيل" })
+                                             </div>
+                                        </div>
+                                        <br />
+                                       
+                                           <div class="row">
+                                                <div class="col-md-12">
+                                                    <button class="btn btn-primary" type="submit">
+                                                        <i class="fa fa-save"></i>
+                                                        تسليم
+                                                    </button>
+                                                </div>
+                                            </div>
+                                                @*<a href="@Url.Action("DeliveryItem", new { id = Model.Item.Id })" class="btn btn-primary"><span class="fa fa-edit"></span> تسليم</a>*@
+                                        
+                                            
+                                          
+                                            <!-- SuperBox -->
+                                          <div class="superbox col-sm-12">
+                                              @foreach (var item in Model.ItemImagesList)
+                                              {
+                                                  <div class="superbox-list" style="width:30.5%">
+                                                      <a target="_blank" href="~/ItemsImages/@item.ImagePath">  <img src="~/ItemsImages/@item.ImagePath" data-img="~/ItemsImages/@item.ImagePath" alt="Item" class="superbox-img"></a>
+                                                  </div>
+                                              }
+                                          </div>
+                                          
+                                            </div>
+                                       
+                                            <!-- /SuperBox -->
+
+ 
+                                        </div>
+                                        }
+                                    <!-- end row -->
+                                    }
+                                </div>
 </div>
   <div class="form-actions">
                                 <div class="row">
@@ -145,8 +195,7 @@
  <a class="btn btn-default" type="button" href="@Url.Action("Index")">
                            عودة إلى القائمة
                                         </a>
-                                        <a href="@Url.Action("Edit", new { id = Model.Id })" class="btn btn-primary"><span class="fa fa-edit"></span> تعديل</a>
-
+                                  
 
  </div>
                                 </div>

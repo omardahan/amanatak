@@ -1,0 +1,103 @@
+﻿
+@{
+    Layout = null;
+}
+ 
+
+<html>
+<head>
+    <style>
+        .backGround {
+            overflow: hidden;
+            background: linear-gradient(rgb(58, 56, 54), rgba(255, 255, 255, 0.7)) 0% 0% / cover, url(/Content/img/image1.jpg) center center no-repeat;
+            height: 383px;
+        }
+    </style>
+    <title>أمانتك</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/Content/img/icon.png" type="image/x-icon">
+    <link rel="icon" href="~/Content/img/icon.png" type="image/x-icon">    <!-- Web Fonts -->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=cyrillic,latin">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,500,700&amp;subset=latin,cyrillic">
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="~/Content/homePageCss/assets/plugins/bootstrap/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="~/Content/homePageCss/assets/css/rtl/app-rtl.css">
+    <link rel="stylesheet" href="~/Content/homePageCss/assets/css/rtl/blocks-rtl.css">
+    <link rel="stylesheet" href="~/Content/homePageCss/assets/css/rtl/plugins-rtl.css">
+    <link rel="stylesheet" href="~/Content/homePageCss/assets/css/rtl/one.style-rtl.css">
+    <!-- CSS Footer -->
+    <link rel="stylesheet" href="~/Content/homePageCss/Custom/assets/css/rtl/footers/footer-v7-rtl.css">
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="~/Content/homePageCss/assets/plugins/animate.css">
+    <link rel="stylesheet" href="~/Content/homePageCss/assets/plugins/line-icons/line-icons.css">
+    <link rel="stylesheet" href="~/Content/homePageCss/assets/plugins/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="~/Content/homePageCss/assets/plugins/owl-carousel2/assets/owl.carousel.css">
+    <link rel="stylesheet" href="~/Content/homePageCss/assets/plugins/cube-portfolio/cubeportfolio/css/cubeportfolio.min.css">
+    <link rel="stylesheet" href="~/Content/homePageCss/assets/plugins/cube-portfolio/cubeportfolio/custom/custom-cubeportfolio.css">
+    <!-- CSS Theme -->
+    <link rel="stylesheet" href="~/Content/homePageCss/Custom/assets/css/rtl/Coustom.css">
+    <link rel="stylesheet" href="~/Content/homePageCss/Custom/assets/css/rtl/rtl.css">
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="~/Content/homePageCss/Custom/assets/css/rtl/custom-rtl.css">
+</head>
+
+
+<body class="backGround">
+    
+    <div class="col-md-6"></div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-lg-offset-4">
+            <div style="width:20%;height:20%;text-align:center">
+
+                <img class="default-logo" src="~/Content/homePageCss/assets/img/logo.png" alt="Logo" style="width:100%;height:100%;margin-right:70%">
+
+
+            </div>
+            <div class="row">
+                <!-- col -->
+                <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
+                    <div class="col-3"></div>
+                    <div class="col-6">
+                        <div class="reg-block">
+                            <div class="reg-block-header">
+                                <h2 style="color: white;">تسجيل الدخول</h2>
+
+                             </div>
+                            <div class="input-group margin-bottom-20">
+                                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                <input class="form-control" required type="text" placeholder="البريد الالكتروني">
+                            </div>
+                            <div class="input-group margin-bottom-20">
+                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                <input class="form-control" required type="password" placeholder="كلمة المرور">
+                            </div>
+                            <hr>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox">
+
+                                </label>
+                                تذكرني
+                            </div>
+                @using (Html.BeginForm("GotoControlPanal", "Account", FormMethod.Post))
+{
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <button class="btn-u btn-block" type="submit">دخول</button>
+                                </div>
+                            </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="col-3"></div>
+                </div>
+            </div>
+</div>
+        
+</body>
+</html>

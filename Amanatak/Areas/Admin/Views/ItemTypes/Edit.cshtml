@@ -44,7 +44,7 @@
                     
                     <header>
                         <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-                        <h2>Edit</h2>
+                        <h2>تعديل</h2>
                     </header>
                     <!-- widget div-->
                     <div>
@@ -67,7 +67,7 @@
         @Html.HiddenFor(model => model.Id)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
+            الاسم
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Name)
                 @Html.ValidationMessageFor(model => model.Name)
@@ -75,7 +75,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Status, new { @class = "control-label col-md-2" })
+            الحالة
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Status)
                 @Html.ValidationMessageFor(model => model.Status)

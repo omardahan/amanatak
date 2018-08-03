@@ -1,0 +1,229 @@
+﻿@using Amanatak.Models
+@model MissingItemViewModel
+
+@{
+    Layout = null;
+}
+<style>
+    .jarviswidget > div {
+        font-size: 16px !important;
+    }
+</style>
+<title>متابعة طلب</title>
+<link rel="shortcut icon" href="~/Content/img/icon.png" type="image/x-icon">
+<link rel="icon" href="~/Content/img/icon.png" type="image/x-icon">
+<!-- Basic Styles -->
+<link href="~/Content/HomePageCss/assets/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/unify1-9/assets/plugins/calender/css/demo.min.css" rel="stylesheet" />
+<link href="~/Content/fonts/font-awesome.min.css" rel="stylesheet" />
+<link href="~/Content/css/smartadmin-production-plugins.min.css" rel="stylesheet" />
+<link href="~/Content/css/smartadmin-production.min.css" rel="stylesheet" />
+<link href="~/Content/css/smartadmin-rtl.min.css" rel="stylesheet" />
+<link href="~/Content/css/smartadmin-skins.min.css" rel="stylesheet" />
+ <body class=" smart-style-6 smart-rtl" data-gr-c-s-loaded="false">
+
+     
+    <div id="content">
+        <!-- row -->
+        <div class="row">
+            <!-- col -->
+            <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
+                <h1 class="page-title txt-color-blueDark">
+                    <!-- PAGE HEADER -->
+
+
+                </h1>
+            </div>
+            <!-- end col -->
+            <!-- right side of the page with the sparkline graphs -->
+            <!-- col -->
+            <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+                 </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+        <!-- widget grid -->
+        <section id="widget-grid">
+            <!-- row -->
+            <div class="row">
+                
+                @using (Html.BeginForm("QueryForItem", "Home", FormMethod.Post))
+                {
+                                                <article class="col-sm-12 col-md-12 col-lg-8 col-lg-offset-2">
+
+                    <div class="row">
+                        <div class="form-group">
+                            
+                            <img class="block"      onclick="GoToHome();" id="u1247_img" src="/Content/homePageCss/virsion/images/logo-crop-u1247.png" alt="" width="211" height="191" style="height: 100px;width: 138px;cursor: pointer;">           
+                            
+                            <br /><br />
+                            @if (TempData["Error"] != null)
+                            {
+                            <div class="alert alert-danger" role="alert">
+                                <strong></strong>@TempData["Error"]
+                            </div>
+
+                                TempData["Error"] = null;
+                            }
+                            <div class="form-horizontal">
+                                <div class="col-md-10">
+                                    @Html.TextBox("SerialNumber", null, new { @placeHolder = "رقم الطلب ",@required="required", @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                            </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button class="btn btn-primary" type="submit">
+                                    <i class="fa fa-save"></i>
+                                    متابعة
+                                </button>
+                            </div>
+                        </div>
+                        </article>
+                            }
+                            <!-- NEW WIDGET START -->
+                            <article class="col-sm-12 col-md-12 col-lg-8 col-lg-offset-2">
+                                @if (Model.Item != null)
+                                {
+                                    <div class="jarviswidget" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
+                                         data-widget-deletebutton="false">
+
+                                        <header>
+                                            <span class="widget-icon"> <i class="fa fa-eye"></i> </span>
+                                            <h2>تفاصيل الطلب رقم @Model.Item.SerialNumber</h2>
+                                        </header>
+                                        <!-- widget div-->
+                                        <div>
+                                            <!-- widget edit box -->
+                                            <div class="jarviswidget-editbox">
+                                                <!-- This area used as dropdown edit box -->
+                                            </div>
+                                            <!-- end widget edit box -->
+                                            <!-- widget content -->
+                                            <div class="widget-body">
+
+                                                <div class="alert alert-danger" role="alert">
+                                                    <strong></strong> بانتظار معثورات تحمل نفس المواصفات
+                                                </div>
+
+
+
+
+                                                <div>
+                                                    <dl class="dl-horizontal">
+                                                        <dt>
+                                                            التصنيف
+
+                                                        </dt>
+
+                                                        <dd>
+                                                            @Html.DisplayFor(model => model.Item.ItemType.Name)
+                                                        </dd>
+
+                                                        <dt>
+                                                            رقم الطلب
+                                                        </dt>
+
+                                                        <dd>
+                                                            @Html.DisplayFor(model => model.Item.SerialNumber)
+                                                        </dd>
+
+                                                        <dt>
+                                                            الوصف
+                                                        </dt>
+                                                        <dd>
+                                                            @Html.DisplayFor(model => model.Item.ItemDetails)
+                                                        </dd>
+
+
+                                                        <dt>
+                                                            الإسم الكامل
+                                                        </dt>
+                                                        <dd>
+                                                            @Html.DisplayFor(model => model.ItemOwner.FullName)
+                                                        </dd>
+
+                                                        <dt>
+                                                            رقم الهوية
+                                                        </dt>
+                                                        <dd>
+                                                            @Html.DisplayFor(model => model.ItemOwner.IdentificationNo)
+                                                        </dd>
+                                                        <dt>
+                                                            جوال
+                                                        </dt>
+                                                        <dd>
+                                                            @Html.DisplayFor(model => model.ItemOwner.Mobile)
+                                                        </dd>
+                                                        <dt>
+                                                            الجنسية
+                                                        </dt>
+                                                        <dd>
+                                                            @Html.DisplayFor(model => model.ItemOwner.Nationality.Name)
+                                                        </dd>
+
+
+
+
+                                                    </dl>
+
+
+                                                    <div id="content">
+
+
+
+                                                        <!-- row -->
+
+                                                        <div class="row">
+                                                            <div class="form-group">
+
+
+
+                                                                <div class="superbox col-sm-12">
+                                                                    @foreach (var item in Model.ItemImagesList)
+                                                                    {
+                                                                        <div class="superbox-list" style="width:30.5%">
+                                                                            <a target="_blank" href="~/ItemsImages/@item.ImagePath">  <img src="~/ItemsImages/@item.ImagePath" data-img="~/ItemsImages/@item.ImagePath" alt="Item" class="superbox-img"></a>
+                                                                        </div>
+                                                                    }
+                                                                </div>
+
+                                                            </div>
+
+                                                            <!-- /SuperBox -->
+
+
+                                                        </div>
+
+                                                        <!-- end row -->
+
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                            <!-- end widget content -->
+                                        </div>
+                                        <!-- end widget div -->
+                                    </div>
+                                }
+                                <!-- end widget -->
+
+                            </article>
+                            <!-- WIDGET END -->
+                        </div>
+                        <!-- end row -->
+
+</section>
+        <!-- end widget grid -->
+    </div>
+
+</body>
+
+<script>
+      function GoToHome() {
+            window.open("@Url.Action("Index", "Home",new { @_self="_self" })")
+
+        }
+</script>

@@ -1,609 +1,423 @@
-﻿@{ 
-    Layout = null;
+﻿@{
+    Layout = null;
 
 
-} 
-<style>
-   .body
-   {
-       font-size:16px!important;
-   }
-</style>
-<html dir="rtl" lang="en">
- <!--<![endif]-->
+
+
+}
+
+ <html class="js html css_verticalspacer">
 <head>
-    <title>أمانتك</title>
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!-- Favicon -->
-     <link rel="shortcut icon" href="~/Content/img/icon.png" type="image/x-icon">
+
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <meta name="generator" content="2018.1.0.386" />
+
+
+
+
+    <link rel="shortcut icon" href="~/Content/img/icon.png" type="image/x-icon">
     <link rel="icon" href="~/Content/img/icon.png" type="image/x-icon">
-    <!-- Web Fonts -->
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=cyrillic,latin">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,500,700&amp;subset=latin,cyrillic">
-    <!-- CSS Global Compulsory -->
-    <link rel="stylesheet" href="~/Content/homePageCss/assets/plugins/bootstrap/css/bootstrap-rtl.min.css">
-    <link rel="stylesheet" href="~/Content/homePageCss/assets/css/rtl/app-rtl.css">
-    <link rel="stylesheet" href="~/Content/homePageCss/assets/css/rtl/blocks-rtl.css">
-    <link rel="stylesheet" href="~/Content/homePageCss/assets/css/rtl/plugins-rtl.css">
-    <link rel="stylesheet" href="~/Content/homePageCss/assets/css/rtl/one.style-rtl.css">
-    <!-- CSS Footer -->
-    <link rel="stylesheet" href="~/Content/homePageCss/Custom/assets/css/rtl/footers/footer-v7-rtl.css">
-    <!-- CSS Implementing Plugins -->
-    <link rel="stylesheet" href="~/Content/homePageCss/assets/plugins/animate.css">
-    <link rel="stylesheet" href="~/Content/homePageCss/assets/plugins/line-icons/line-icons.css">
-    <link rel="stylesheet" href="~/Content/homePageCss/assets/plugins/font-awesome/css/font-awesome.min.css">
-    
-    <link rel="stylesheet" href="~/Content/homePageCss/assets/plugins/owl-carousel2/assets/owl.carousel.css">
-    <link rel="stylesheet" href="~/Content/homePageCss/assets/plugins/cube-portfolio/cubeportfolio/css/cubeportfolio.min.css">
-    <link rel="stylesheet" href="~/Content/homePageCss/assets/plugins/cube-portfolio/cubeportfolio/custom/custom-cubeportfolio.css">
-    <!-- CSS Theme -->
-    <link rel="stylesheet" href="~/Content/homePageCss/Custom/assets/css/rtl/Coustom.css">
-    <link rel="stylesheet" href="~/Content/homePageCss/Custom/assets/css/rtl/rtl.css">
-    <!-- CSS Customization -->
-    <link rel="stylesheet" href="~/Content/homePageCss/Custom/assets/css/rtl/custom-rtl.css">
+    <title>أمانتك</title>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="~/Content/homePageCss/virsion/css/site_global.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/homePageCss/virsion/css/index.css" id="pagesheet" />
 </head>
-<body id="body" data-spy="scroll" data-target=".one-page-header" class="demo-lightbox-gallery">
-    <!--=== Header ===-->
-    <nav class="one-page-header one-page-header-style-2 navbar navbar-default navbar-fixed-top architecture-nav one-page-nav-scrolling one-page-nav__fixed" role="navigation">
-        <div class="container">
-            <div class="page-scroll">
-                <a class="logo-link navbar-brand logo-left" href="#intro">
-                    <img class="default-logo" src="~/Content/homePageCss/assets/img/logo.png" alt="Logo">
-                   
-                </a>
-            </div>
-            <div class="menu-container page-scroll">
-                <button type="button" class="navbar-toggle pull-right" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="container no-padding-left ">
-                <div class="row collapse navbar-collapse navbar-ex1-collapse">
-                    <div class="col-md-5 no-side-padding">
-                        <div class="left">
-                            <div class="menu-container">
-                                <ul class="nav navbar-nav">
-                                    <li class="page-scroll home">
-                                        <a href="#home">الصفحة الرئيسية</a>
-                                    </li>
-                                    <li class="page-scroll">
-                                        <a href="">تسجيل الدخول</a>
-                                    </li>
-                                    <li class="page-scroll">
-                                        <a href="#services">الطلبات</a>
-                                    </li>
-                                    
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2 no-side-padding">
-                        <div class="center-block logo page-scroll">
-                            <a class="logo-link navbar-brand logo-centered" href="#intro">
-                                <img class="default-logo" src="~/Content/homePageCss/assets/img/logo.png" alt="Logo">
-                               @*<img class="shrink-pace logo" src="~/Content/homePageCss/assets/img/logo.png" alt="Logo">*@
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-5 no-side-padding">
-                        <div class="right">
-                            <div class="menu-container">
-                                <ul class="nav navbar-nav">
-                                   
-                                    <li class="page-scroll home">
-                                        <a href="#gallery">الخدمات</a>
-                                    </li>
-                                    <li class="page-scroll">
-                                        <a href="#awards">حول أمانتك</a>
-                                    </li>
-                                    <li class="page-scroll">
-                                        <a href="#contact">الاتصال بنا</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.container -->
-    </nav>
-    <!--=== End Header ===-->
-    <!-- Promo block BEGIN -->
-  
-    <!-- Promo block END -->
-    <!--About Section-->
-    <section id="home">
-        <div style="height:590px; background-color:beige" ><br /><br />
-            <div style="margin-right:400px;margin-top:180px;background-color:beige">
-                <video id='video' controls autoplay preload='auto' width="600"  loop="loop" >
-                    <source id='mp4' src="~/Content/HomePageCss/assets/img/4g7tr-p4isq.mp4" type='video/mp4' />
-                   
-                </video>
-               
-              
-                @*<img src="~/Content/HomePageCss/assets/img/ezgif.com-resize.gif" />*@
-            </div>
-        </div>
-    </section>
-    @*<section id="about">
-        <div class="container content-lg">
-            <div class="g-heading-v7 text-center g-mb-70">
-                <h2 class="h2"><em class="block-name"></em> تسجيل الدخول</h2>
-            </div>
-            <!-- all for your comfort blocks -->
-            <div class="reg-block">
-                <div class="reg-block-header">
-                    
-                    <ul class="social-icons text-center">
-                        <li><a class="rounded-x social_facebook" href="#" data-original-title="Facebook"></a></li>
-                        <li><a class="rounded-x social_twitter" href="#" data-original-title="Twitter"></a></li>
-                        <li><a class="rounded-x social_googleplus" href="#" data-original-title="Google Plus"></a></li>
-                        <li><a class="rounded-x social_linkedin" href="#" data-original-title="Linkedin"></a></li>
-                    </ul>
-                    <p> اذا كنت لا تملك حساب اضغط الرابط للتسجيل<a class="color-green" href="page_registration1.html">للتسجيل</a> </p>
-                </div>
-                <div class="input-group margin-bottom-20">
-                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                    <input class="form-control"style="width: 300px;" type="text" placeholder="البريد الالكتروني">
-                </div>
-                <div class="input-group margin-bottom-20">
-                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                    <input class="form-control" type="text" style="width: 300px;" placeholder="كلمة المرور">
-                </div>
-                <hr>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox">
-                        <p>تذكرني</p>
-                    </label>
-                </div>
+<body class="initialized" data-whatinput="mouse">
 
-                <div class="row">
-                    <div class="col-md-10 col-md-offset-1">
-                        <button class="btn-u btn-block" type="submit" style="width:150px;">دخول</button>
+
+
+
+
+    <div class="clearfix" id="page">
+        <!-- group -->
+        <div class="clearfix grpelem" id="ppu1227">
+            <!-- column -->
+            <div class="clearfix colelem" id="pu1227">
+                <!-- group -->
+                <div class="browser_width grpelem" id="u1227-bw" style="height: 650px;">
+                    <div class="museBGSize" id="u1227" style="background-attachment: fixed;">
+                        <!-- group -->
+                        <div class="clearfix" id="u1227_align_to_page">
+                            <div class="PamphletWidget clearfix grpelem wp-slideshow-playing" id="pamphletu1228" data-contentlayout="stack" data-transitionstyle="vertical">
+                                <!-- none box -->
+                                <div class="ThumbGroup clearfix grpelem" id="u1233" role="tablist">
+                                    <!-- none box -->
+                                    <div class="popup_anchor" id="u1235popup">
+                                        <div class="Thumb popup_element rounded-corners wp-tab-active PamphletThumbSelected" id="u1235" role="tab" tabindex="0" aria-selected="true" aria-controls="u1242" style=""><!-- simple frame --></div>
+                                    </div>
+                                    <div class="popup_anchor" id="u1234popup">
+                                        <div class="Thumb popup_element rounded-corners" id="u1234" role="tab" tabindex="-1" aria-selected="false" aria-controls="u1240" style=""><!-- simple frame --></div>
+                                    </div>
+                                    <div class="popup_anchor" id="u1236popup">
+                                        <div class="Thumb popup_element rounded-corners" id="u1236" role="tab" tabindex="-1" aria-selected="false" aria-controls="u1238" style=""><!-- simple frame --></div>
+                                    </div>
+                                </div>
+                                <div class="popup_anchor" id="u1237popup">
+                                    <div class="wp-slideshow-clip has_updated_clip_width" style="position: relative; width: 928px; height: 147px; overflow: hidden; left: 0px; top: 0px;">
+                                        <div class="ContainerGroup clearfix has_updated_clip_width" id="u1237" style="width: 928px; height: 147px; position: relative; top: -421.707px; left: 0px; margin: 0px; overflow: visible;">
+                                            <!-- stack box -->
+                                            <div class="Container clearfix grpelem has_updated_clip_width wp-panel wp-panel-active" id="u1242" role="tabpanel" aria-labelledby="u1235" style="left: 0px; top: 441px; margin: 0px; position: absolute;">
+                                                <!-- group -->
+                                                <img class="grpelem" id="u1243-4" alt="أمانتك" width="863" height="130" src="~/Content/homePageCss/virsion/images/u1243-4.png" data-widget-id="pamphletu1228"><!-- rasterized frame -->
+                                            </div>
+                                            <div class="Container clearfix grpelem has_updated_clip_width wp-panel" id="u1240" role="tabpanel" aria-labelledby="u1234" style="left: 0px; top: 147px; margin: 0px; position: absolute;">
+                                                <!-- group -->
+                                                <img class="grpelem" id="u1241-4" alt="في البلد الأمين" width="863" height="75" src="~/Content/homePageCss/virsion/images/u1241-4.png" data-widget-id="pamphletu1228"><!-- rasterized frame -->
+                                            </div>
+                                            <div class="Container clearfix grpelem has_updated_clip_width wp-panel" id="u1238" role="tabpanel" aria-labelledby="u1236" style="left: 0px; top: 294px; margin: 0px; position: absolute;">
+                                                <!-- group -->
+                                                <img class="grpelem" id="u1239-4" alt="نوصلها إليك" width="863" height="75" src="~/Content/homePageCss/virsion/images/u1239-4.png" data-widget-id="pamphletu1228"><!-- rasterized frame -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <div class="browser_width grpelem" id="u2751-bw" style="height: 55px;">
+                    <div id="u2751"><!-- simple frame --></div>
+                </div>
+                <img class="grpelem" id="u1246" alt="سجل"  style="cursor: pointer;" onclick="MissionItem()" src="~/Content/homePageCss/virsion/images/blank.gif"><!-- state-based BG images -->
+                <div class="clip_frame grpelem" id="u1247">
+                    <!-- image -->
+                    <img class="block" id="u1247_img" src="~/Content/homePageCss/virsion/images/logo-crop-u1247.png" alt="" width="211" height="191">
+                </div>
+                 <img class="grpelem" style="cursor: pointer;" id="u2356" alt="متابعة طلب" onclick="QueryOpen()" src="~/Content/homePageCss/virsion/images/blank.gif"><!-- state-based BG images -->
+                <img class="grpelem" style="cursor: pointer;" id="u2754"  onclick="Login()" alt="تسجيل الدخول" src="~/Content/homePageCss/virsion/images/blank.gif"><!-- state-based BG images -->
+                <img class="grpelem" id="u2766-4" alt="منصة أمانتك" width="202" height="62" src="~/Content/homePageCss/virsion/images/u2766-4.png"><!-- rasterized frame -->
             </div>
-            <!-- modal popup window -->
-            <div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <button aria-hidden="true" data-dismiss="modal" class="close" type="button"><i class="fa fa-times"></i></button>
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-body">
-
-                            <div class="modal-top margin-bottom-40">
-                                <img src="~/Content/homePageCss/Custom/assets/img-temp/projects/img1.jpg" alt="">
-                               
+            <img class="colelem" id="u1266-4" alt="خدمات أمانتك" width="339" height="59" src="~/Content/homePageCss/virsion/images/u1266-4.png"><!-- rasterized frame -->
+            <div class="colelem" id="u1267"><!-- simple frame --></div>
+            <div class="clearfix colelem" id="pu1329">
+                <!-- group -->
+                <div class="browser_width grpelem" id="u1329-bw" style="height: 403px;">
+                    <div class="museBGSize" id="u1329" style="background-attachment: fixed;">
+                        <!-- column -->
+                        <div class="clearfix" id="u1329_align_to_page">
+                            <div class="clip_frame colelem" id="u1351">
+                                <!-- image -->
+                                <img class="block" id="u1351_img" src="~/Content/homePageCss/virsion/images/qoute.png" alt="" width="48" height="46">
                             </div>
-                            <div class="modal-bot g-heading-v7">
-                                <h3 class="g-color-white">Omom sociis natoque penatibus</h3>
-                                <p class="margin-bottom-30">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Omom sociis natoque penatibus.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Omom sociis natoque penatibus.</p>
-                                <p class="margin-bottom-30">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Omom sociis natoque penatibus.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
-                                <p class="margin-bottom-30"><img src="~/Content/homePageCss/Custom/assets/img-temp/wp5.jpg" alt=""></p>
-                                <p class="margin-bottom-30">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Omom sociis natoque penatibus.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
-                                <p class="margin-bottom-30">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Omom sociis natoque penatibus.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+                            <div class="PamphletWidget clearfix colelem wp-slideshow-playing" id="pamphletu1330" data-contentlayout="stack" data-transitionstyle="fading">
+                                <!-- none box -->
+                                <div class="ThumbGroup clearfix grpelem" id="u1345" role="tablist">
+                                    <!-- none box -->
+                                    <div class="popup_anchor" id="u1346popup">
+                                        <div class="Thumb popup_element rounded-corners wp-tab-active PamphletThumbSelected" id="u1346" role="tab" tabindex="0" aria-selected="true" aria-controls="u1340" style=""><!-- simple frame --></div>
+                                    </div>
+                                    <div class="popup_anchor" id="u1348popup">
+                                        <div class="Thumb popup_element rounded-corners" id="u1348" role="tab" tabindex="-1" aria-selected="false" aria-controls="u1334" style=""><!-- simple frame --></div>
+                                    </div>
+                                    <div class="popup_anchor" id="u1347popup">
+                                        <div class="Thumb popup_element rounded-corners" id="u1347" role="tab" tabindex="-1" aria-selected="false" aria-controls="u1337" style=""><!-- simple frame --></div>
+                                    </div>
+                                </div>
+                                <div class="popup_anchor" id="u1333popup">
+                                    <div class="ContainerGroup clearfix" id="u1333" style="width: 0px; height: 0px;">
+                                        <!-- stack box -->
+                                        <div class="Container clearfix grpelem wp-panel wp-panel-active" id="u1340" role="tabpanel" aria-labelledby="u1346" style="display: block; opacity: 0.363524;">
+                                            <!-- column -->
+                                            <div class="clearfix colelem" id="u1341-4">
+                                                <!-- content -->
+                                                <p>لا تقلق بعد اليوم فمفقوداتك في أمان</p>
+                                            </div>
+                                            <div class="clearfix colelem" id="u1342-3">
+                                                <!-- content -->
+                                                <p>&nbsp;</p>
+                                            </div>
+                                        </div>
+                                        <div class="Container clearfix grpelem wp-panel" id="u1334" role="tabpanel" aria-labelledby="u1348" style="display: none;">
+                                            <!-- column -->
+                                            <div class="clearfix colelem" id="u1336-8">
+                                                <!-- content -->
+                                                <p>في مجتمع يقدر بأكثر من</p>
+                                                <p>ثلاثة مليون مسلم</p>
+                                                <p>يجتمعون في مكان واحد</p>
+                                            </div>
+                                            <div class="clearfix colelem" id="u1335-3">
+                                                <!-- content -->
+                                                <p>&nbsp;</p>
+                                            </div>
+                                        </div>
+                                        <div class="Container clearfix grpelem wp-panel" id="u1337" role="tabpanel" aria-labelledby="u1347" style="display: block; opacity: 0.636476;">
+                                            <!-- group -->
+                                            <div class="clearfix grpelem" id="u1339-6">
+                                                <!-- content -->
+                                                <p>ستصل إليك ضالتك من</p>
+                                                <p>مركز أمانتك</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="browser_width grpelem" id="u1370-bw" style="height: 749px;">
+                    <div class="rgba-background" id="u1370">
+                        <!-- group -->
+                        <div class="clearfix" id="u1370_align_to_page">
+                            <div class="clip_frame grpelem" id="u2346">
+                                <!-- image -->
+                                <img class="block" id="u2346_img" src="~/Content/homePageCss/virsion/images/6icon.jpg" alt="" width="62" height="60">
+                            </div>
+                            <div class="clearfix grpelem" id="pu1268-4">
+                                <!-- column -->
+                                <div class="clearfix colelem" id="u1268-4">
+                                    <br /><br />
+                                    <!-- content -->
+                                    <p>إستلام المعثورات من العموم في المركز، وإضافتها بواسطة أحد المشغلين في المنصة مع البيانات الأساسية والتصنيف المناسب.</p>
+                                </div>
+                                <div class="clearfix colelem" id="u1275-4" style="font-size:20px;">
+                                    <!-- content -->
+                                    <p>إمكانية البحث</p>
+                                </div>
+                                <div class="clearfix colelem" id="u1269-4">
+                                    <!-- content -->
+
+                                    <p>إمكانية البحث المتقدم في طلبات المفقودات بواسطة الإسم، الهوية، المرجعية، الجوال، أو الإيميل. وما ينطبق منها في المعثورات.</p>
+                                </div>
+                            </div>
+                            <div class="clip_frame grpelem" id="u2336">
+                                <!-- image -->
+                                <img class="block" id="u2336_img" src="~/Content/homePageCss/virsion/images/5icon.jpg" alt="" width="67" height="67">
+                            </div>
+                            <div class="clearfix grpelem" id="pu1272-4">
+                                <!-- column -->
+                                <div class="clearfix colelem" id="u1272-4">
+                                    <br />
+                                    <!-- content -->
+                                    <p>التواصل بين المشغلين للمنصة ومقدمي الطلبات، للرد على الإستفسارات بشكل عام وكذلك لطلب المزيد من التوضيح للوصف.</p>
+                                </div>
+                                <div class="clearfix colelem" id="u1279-4" style="font-size:20px;">
+                                    <!-- content -->
+                                    <p>تسليم المعثورات لأصحابها</p>
+                                </div>
+                                <div class="clearfix colelem" id="u1273-4">
+                                    <!-- content -->
+                                    <p>تسليم المعثورات لصاحب العلاقة أو من ينوب عنه بعد المطابقة، وعمل الإجراءات المناسبة بحسب التصنيف، ثم إغلاق الطلب.</p>
+                                </div>
+                            </div>
+                            <div class="clip_frame grpelem" id="u2326">
+                                <!-- image -->
+                                <img class="block" id="u2326_img" src="~/Content/homePageCss/virsion/images/4icon.jpg" alt="" width="62" height="62">
+                            </div>
+                            <div class="clearfix grpelem" id="pu1270-4">
+                                <!-- column -->
+                                <div class="clearfix colelem" id="u1270-4">
+                                    <br /><br />
+                                    <!-- content -->
+                                    <p>تسجيل طلب المفقودات في المنصة بواسطة صاحب العلاقة أو من ينوب عنه، ثم المتابعة للحالة من خلال الموقع والإشعارات.</p>
+                                </div>
+                                <div class="clearfix colelem" id="u1277-4" style="font-size:20px;">
+                                    <!-- content -->
+                                    <p>التواصل مع الجهات ذات الاهتمام</p>
+                                </div>
+                                <div class="clearfix colelem" id="u1271-4">
+                                    <!-- content -->
+                                    <p>التواصل مع الجهات المعنية بخصوص المعثورات بحسب تصنيفها، في حال كانت ذات حساسية عالية أو أوراق ثبوتية ضرورية.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix grpelem" id="u1274-4">
+                    <!-- content -->
+                    <p>توصيل المفقودات لاصحابها</p>
+                </div>
+                <div class="clearfix grpelem" id="u1276-4">
+                    <!-- content -->
+                    <p>تسجيل طلبات المفقودات</p><br />
+                </div>
+                <div class="clearfix grpelem" id="u1278-4">
+                    <!-- content -->
+                    <p>التواصل مع مقدمي الطلبات</p>
+                </div>
+                <div class="clip_frame clearfix grpelem" id="u2296">
+                    <!-- image -->
+                    <img class="position_content" id="u2296_img" src="~/Content/homePageCss/virsion/images/1icon.jpg" alt="" width="72" height="72">
+                </div>
+                <div class="clip_frame grpelem" id="u2306">
+                    <!-- image -->
+                    <img class="block" id="u2306_img" src="~/Content/homePageCss/virsion/images/2icon.jpg" alt="" width="80" height="73">
+                </div>
+                <div class="clip_frame grpelem" id="u2316">
+                    <!-- image -->
+                    <img class="block" id="u2316_img" src="~/Content/homePageCss/virsion/images/3icon.jpg" alt="" width="74" height="66">
+                </div>
+            </div>
+            <div class="browser_width colelem" id="u1496-bw" style="height: 259px;">
+                <div class="museBGSize" id="u1496" style="background-attachment: fixed;">
+                    <!-- group -->
+                    <div class="clearfix" id="u1496_align_to_page">
+                        <div class="clearfix grpelem" id="pu1502">
+                            <!-- group -->
+                            <div class="grpelem" id="u1502"><!-- simple frame --></div>
+                            <div class="grpelem" id="u1503"><!-- simple frame --></div>
+                            <div class="clearfix grpelem" id="u1507-4">
+                                <!-- content -->
+                                <p>نقود</p>
+                            </div>
+                            <div class="clearfix grpelem" id="u1508-4">
+                                <!-- content -->
+                                <p>وثائق</p>
+                            </div>
+                            <div class="size_fixed grpelem" id="u2724">
+                                <!-- custom html -->
+
+                                <p class="ame-count-container"><span></span><span class="ame-counter">35</span><span>+</span></p>
+
+                            </div>
+                            <div class="size_fixed grpelem" id="u2729">
+                                <!-- custom html -->
+
+                                <p class="ame-count-container"><span></span><span class="ame-counter">56</span><span>+</span></p>
+
+                            </div>
+                        </div>
+                        <div class="clearfix grpelem" id="pu1505">
+                            <!-- group -->
+                            <div class="grpelem" id="u1505"><!-- simple frame --></div>
+                            <div class="clearfix grpelem" id="u1510-4">
+                                <!-- content -->
+                                <p>اكسسوارات</p>
+                            </div>
+                            <div class="size_fixed grpelem" id="u2719">
+                                <!-- custom html -->
+
+                                <p class="ame-count-container"><span></span><span class="ame-counter">28</span><span>+</span></p>
+
+                            </div>
+                        </div>
+                        <div class="clearfix grpelem" id="pu1504">
+                            <!-- group -->
+                            <div class="grpelem" id="u1504"><!-- simple frame --></div>
+                            <div class="grpelem" id="u1506"><!-- simple frame --></div>
+                            <div class="clearfix grpelem" id="u1509-4">
+                                <!-- content -->
+                                <p>حقائب</p>
+                            </div>
+                            <div class="clearfix grpelem" id="u1511-4">
+                                <!-- content -->
+                                <p>أجهزة إلكترونية</p>
+                            </div>
+                            <div class="size_fixed grpelem" id="u2704">
+                                <!-- custom html -->
+
+                                <p class="ame-count-container"><span></span><span class="ame-counter">92</span><span>+</span></p>
+
+                            </div>
+                            <div class="size_fixed grpelem" id="u2714">
+                                <!-- custom html -->
+
+                                <p class="ame-count-container"><span></span><span class="ame-counter">15</span><span>+</span></p>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>*@
-    <!--End of About Section-->
-    <!--Services Section-->
-    <section id="services">
-        <div class="container-fluid bg-color-com service-section">
-            <div class="container content-md">
-                <div class="row g-mb-70 g-heading-v7 text-center">
-                    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-                        <h2 class="h2 g-color-white g-mb-30"><em class="block-name"></em> الخدمات المقدمة</h2>
-                        <p class="g-color-white-darker">يقدم نظام أمانتك الخدمات التالية</p>
-                        <br /><table style="margin-right:120px;" width="500px"><tr><td><div style=""><a style="height:120px;width:130px;vertical-align:middle;" href="" class="btn btn-danger" ><br /><br />بلاغ مفقودات</a></div></td>
-                             <td>
-                                 <a style="height:120px;width:130px;vertical-align:middle;" href="" class="btn btn-danger" ><br /><br />متابعة طلب</a>
-                             </td>
-                             </tr></table>
-                    </div>
+            <div class="clearfix colelem" id="pu2690">
+                <!-- group -->
+                <div class="size_fixed grpelem" id="u2690">
+                    <!-- custom html -->
+
+                    <video width="100%" height="100%" title="لماذا جاء موقع أمانتك" poster="~/Content/homePageCss/virsion/assets/ezgif.com-resize.jpg" controls="">
+                        <source src="~/Content/HomePageCss/virsion/assets/4g7tr-p4isq.mp4" type="video/mp4">
+                        <source src="Add File" type="video/ogg">
+                        <source src="Add File" type="video/webm">
+                    </video>
+
                 </div>
-                <!-- Owl Carousel v4 we create amazing things-->
-                <div>
-                   
+                <div class="size_fixed grpelem" id="u2703">
+                    <!-- custom html -->
+
+
+
                 </div>
-                <!-- End Owl Carousel v4 -->
             </div>
         </div>
-    </section>
-    <!--End of Services Section-->
-    <!--Projects Section-->
+        <div class="verticalspacer" data-offset-top="2308" data-content-above-spacer="2307" data-content-below-spacer="62" style="min-height: 133px; height: calc((100vh - 2369px) - 15px);"></div>
+        <div class="clearfix grpelem" id="pu1114">
+            <!-- column -->
+            <div class="browser_width colelem" id="u1114-bw" style="height: 630px;">
+                <div class="rgba-background" id="u1114">
+                    <!-- group -->
+                    <div class="clearfix" id="u1114_align_to_page">
+                        <a class="nonblock nontext clearfix grpelem" id="u1144-5" href="http://www.musefree.com"><!-- content --><p>© 2014&nbsp; Made with&nbsp; <span class="actAsInlineDiv normal_text" id="u1165"><!-- content --><span class="actAsDiv clip_frame excludeFromNormalFlow" id="u1159"><!-- image --><img id="u1159_img" src="images/heart.png?crc=117585526" alt="" width="11" height="9"></span></span>&nbsp; in Musefree.com</p></a>
+                    </div>
+                </div>
+            </div>
+            <div class="browser_width colelem" id="u2769-bw" style="height: 62px;">
+                <div id="u2769"><!-- simple frame --></div>
+            </div>
+        </div>
+    </div>
+    <div class="preload_images">
+        <img class="preload" src="~/Content/homePageCss/virsion/images/u1246-r.png" alt="">
+        <img class="preload" src="~/Content/homePageCss/virsion/images/u2356-r.png" alt="">
+        <img class="preload" src="~/Content/homePageCss/virsion/images/u2754-r.png" alt="">
+    </div>
+    <!-- JS includes -->
+    <script src="~/Content/HomePageCss/assets/plugins/jquery/jquery.min.js"></script>
+    <script src="~/Content/homePageCss/virsion/scripts/jquery.scrolleffects.js"></script>
+    @*<script src="~/Content/homePageCss/virsion/scripts/jquery-1.8.3.min.js"></script>*@
+    <script src="~/Content/HomePageCss/scripts/jquery.museoverlay.js"></script>
+    @*<script src="~/Content/homePageCss/virsion/scripts/jquery.museoverlay.js"></script>*@
+    <script src="~/Content/HomePageCss/virsion/scripts/jquery.musepolyfill.bgsize.js"></script>
+
+    @*<script src="~/Content/homePageCss/virsion/scripts/jquery.musepolyfill.bgsize.js"></script>*@
+    <script src="~/Content/homePageCss/virsion/scripts/jquery.scrolleffects.js"></script>
+    <script src="~/Content/homePageCss/virsion/scripts/jquery.watch.js"></script>
+    @*<script src="~/Content/homePageCss/virsion/scripts/museutils.js"></script>*@
+    <script src="~/Content/HomePageCss/scripts/museutils.js"></script>
+    @*<script src="~/Content/homePageCss/virsion/scripts/musewpslideshow.js"></script>*@
+    <script src="~/Content/HomePageCss/virsion/scripts/musewpslideshow.js"></script>
+    <script src="~/Content/homePageCss/virsion/scripts/whatinput.js"></script>
+    <script src="~/Content/homePageCss/virsion/scripts/webpro.js"></script>
+    <script src="~/Content/homePageCss/virsion/scripts/touchswipe.js"></script>
+    <script src="~/Content/HomePageCss/scripts/require.js"></script>
     
-    <!--End of Projects Section-->
-    <!--Team Section-->
-    @*<section id="team">
-        <div class="container-fluid bg-color-com team-section">
-            <div class="container content-md g-heading-v7 text-center">
-                <h2 class="h2 g-mb-70 g-color-white"><em class="block-name">Our team</em> Work with professionals</h2>
-                <!-- Owl Carousel v4 team -->
-                <div class="owl-carousel-v4 owl-theme">
-                    <div class="owl-slider-v4-team">
-                        <div class="item">
-                            <img class="img-responsive" src="~/Content/homePageCss/Custom/assets/img-temp/t1.jpg" alt="">
-                            <small class="owl-small">Technical Supervisor</small>
-                            <span class="owl-span">James Novel</span>
-                            <ul class="list-inline owl-list">
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#" class="fb"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="item">
-                            <img class="img-responsive" src="~/Content/homePageCss/Custom/assets/img-temp/t2.jpg" alt="">
-                            <small class="owl-small">Technical Director</small>
-                            <span class="owl-span">Catrina Wearner</span>
-                            <ul class="list-inline owl-list">
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#" class="fb"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="item">
-                            <img class="img-responsive" src="~/Content/homePageCss/Custom/assets/img-temp/t5.jpg" alt="">
-                            <small class="owl-small">Technical Manager</small>
-                            <span class="owl-span">Fiona Biloti</span>
-                            <ul class="list-inline owl-list">
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#" class="fb"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="item">
-                            <img class="img-responsive" src="~/Content/homePageCss/Custom/assets/img-temp/t9.jpg" alt="">
-                            <small class="owl-small">Head of Secretory</small>
-                            <span class="owl-span">Samuel Calven</span>
-                            <ul class="list-inline owl-list">
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#" class="fb"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="item">
-                            <img class="img-responsive" src="~/Content/homePageCss/Custom/assets/img-temp/t4.jpg" alt="">
-                            <small class="owl-small">Human Resources Manager</small>
-                            <span class="owl-span">George Manuel</span>
-                            <ul class="list-inline owl-list">
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#" class="fb"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="item">
-                            <img class="img-responsive" src="~/Content/homePageCss/Custom/assets/img-temp/t6.jpg" alt="">
-                            <small class="owl-small">Chief Interior Designer</small>
-                            <span class="owl-span">Salma Irek</span>
-                            <ul class="list-inline owl-list">
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#" class="fb"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="item">
-                            <img class="img-responsive" src="~/Content/homePageCss/Custom/assets/img-temp/t8.jpg" alt="">
-                            <small class="owl-small">Chief Engineer</small>
-                            <span class="owl-span">Carl Sanchez</span>
-                            <ul class="list-inline owl-list">
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#" class="fb"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="item">
-                            <img class="img-responsive" src="~/Content/homePageCss/Custom/assets/img-temp/t3.jpg" alt="">
-                            <small class="owl-small">Finance Manager</small>
-                            <span class="owl-span">Julia Dolly</span>
-                            <ul class="list-inline owl-list">
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#" class="fb"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Owl Carousel v4 -->
-            </div>
-        </div>
-    </section>*@
-    <!--End of Team Section-->
-    <!--Gallery Section-->
-    <section id="gallery">
-        <div class="gallery-section">
-            <div class="container content-md g-heading-v7 text-center">
-                <h2 class="h2 g-mb-70"><em class="block-name">Work process</em> test</h2>
-                <!-- Tab v2 -->
-                <div class="tab-v2">
-                    <div class="tab-content">
-                        <div class="tab-pane fade in active g-mb-100" id="discuss-1">
-                            <!-- Owl Carousel v4 tab content-->
-                            <div class="owl-carousel-v4 owl-theme">
-                                <div class="owl-slider-v4-gallery">
-                                    <div class="item">
-                                        <img src="~/Content/homePageCss/Custom/assets/img-temp/wp1.jpg" alt="">
-                                        <h3>Projects of resdential buildings</h3>
-                                        <p class="g-color-black-lighter">Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Etiam sit amet orci eget eros.</p>
-                                    </div>
-                                    <div class="item">
-                                        <img src="~/Content/homePageCss/Custom/assets/img-temp/wp2.jpg" alt="">
-                                        <h3>Projects of resdential buildings</h3>
-                                        <p class="g-color-black-lighter">Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Etiam sit amet orci eget eros.</p>
-                                    </div>
-                                    <div class="item">
-                                        <img src="~/Content/homePageCss/Custom/assets/img-temp/wp3.jpg" alt="">
-                                        <h3>Projects of resdential buildings</h3>
-                                        <p class="g-color-black-lighter">Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Etiam sit amet orci eget eros.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Owl Carousel v4 -->
-                        </div>
-                        <div class="tab-pane fade in static-tab" id="concept-1">
-                            <img src="~/Content/homePageCss/Custom/assets/img-temp/wp4.jpg" alt="">
-                            <h3>Projects of resdential buildings</h3>
-                            <p class="g-color-black-lighter">Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Etiam sit amet orci eget eros.</p>
-                            <!-- End Owl Carousel v4 -->
-                        </div>
-                        <div class="tab-pane fade in static-tab" id="modeling-1">
-                            <img src="~/Content/homePageCss/Custom/assets/img-temp/wp5.jpg" alt="">
-                            <h3>Projects of resdential buildings</h3>
-                            <p class="g-color-black-lighter">Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Etiam sit amet orci eget eros.</p>
-                            <!-- End Owl Carousel v4 -->
-                        </div>
-                        <div class="tab-pane fade in static-tab" id="clients-1">
-                            <img src="~/Content/homePageCss/Custom/assets/img-temp/wp6.jpg" alt="">
-                            <h3>Projects of resdential buildings</h3>
-                            <p class="g-color-black-lighter">Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Etiam sit amet orci eget eros.</p>
-                            <!-- End Owl Carousel v4 -->
-                        </div>
-                        <ul class="nav nav-tabs">
-                            <li class="active">
-                                <a class="tab-1" href="#discuss-1" data-toggle="tab">
-                                    <strong>Discuss</strong>
-                                    <span class="g-color-white-darker">Lorem ipsum dolor sit amet.</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="tab-2" href="#concept-1" data-toggle="tab">
-                                    <strong>Creative concept</strong>
-                                    <span class="g-color-white-darker">Lorem ipsum dolor sit amet.</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="tab-3" href="#modeling-1" data-toggle="tab">
-                                    <strong>3D modeling</strong>
-                                    <span class="g-color-white-darker">Lorem ipsum dolor sit amet.</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="tab-4" href="#clients-1" data-toggle="tab">
-                                    <strong>Happy clients</strong>
-                                    <span class="g-color-white-darker">Lorem ipsum dolor sit amet.</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- End Tab v2 -->
-            </div>
-            <div class="container-fluid bg-color-com content-md no-side-padding">
-                <div class="container">
-                    <div class="row g-mb-50 g-heading-v7 text-center">
-                        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-                            <h2 class="h2 g-color-white g-mb-30"><em class="block-name">Our technologies</em> How we create</h2>
-                            <p class="g-color-white-darker">Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Owl Carousel v4 gallery-->
-                <div class="owl-carousel-v4 owl-theme">
-                    <div class="owl-slider-v4-gallery-2">
-                        <div class="item">
-                            <img src="~/Content/homePageCss/Custom/assets/img-temp/ot1.jpg" alt="">
-                            <h3><a href="#">Projects of resdential buildings</a></h3>
-                            <p class="g-color-white-darker">Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.</p>
-                        </div>
-                        <div class="item">
-                            <img src="~/Content/homePageCss/Custom/assets/img-temp/ot2.jpg" alt="">
-                            <h3><a href="#">Projects of resdential buildings</a></h3>
-                            <p class="g-color-white-darker">Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.</p>
-                        </div>
-                        <div class="item">
-                            <img src="~/Content/homePageCss/Custom/assets/img-temp/ot3.jpg" alt="">
-                            <h3><a href="#">Projects of resdential buildings</a></h3>
-                            <p class="g-color-white-darker">Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.</p>
-                        </div>
-                        <div class="item">
-                            <img src="~/Content/homePageCss/Custom/assets/img-temp/ot4.jpg" alt="">
-                            <h3><a href="#">Projects of resdential buildings</a></h3>
-                            <p class="g-color-white-darker">Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.</p>
-                        </div>
-                        <div class="item">
-                            <img src="~/Content/homePageCss/Custom/assets/img-temp/ot5.jpg" alt="">
-                            <h3><a href="#">Projects of resdential buildings</a></h3>
-                            <p class="g-color-white-darker">Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.</p>
-                        </div>
-                        <div class="item">
-                            <img src="~/Content/homePageCss/Custom/assets/img-temp/ot6.jpg" alt="">
-                            <h3><a href="#">Projects of resdential buildings</a></h3>
-                            <p class="g-color-white-darker">Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.</p>
-                        </div>
-                        <div class="item">
-                            <img src="~/Content/homePageCss/Custom/assets/img-temp/ot1.jpg" alt="">
-                            <h3><a href="#">Projects of resdential buildings</a></h3>
-                            <p class="g-color-white-darker">Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.</p>
-                        </div>
-                        <div class="item">
-                            <img src="~/Content/homePageCss/Custom/assets/img-temp/ot2.jpg" alt="">
-                            <h3><a href="#">Projects of resdential buildings</a></h3>
-                            <p class="g-color-white-darker">Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.</p>
-                        </div>
-                        <div class="item">
-                            <img src="~/Content/homePageCss/Custom/assets/img-temp/ot3.jpg" alt="">
-                            <h3><a href="#">Projects of resdential buildings</a></h3>
-                            <p class="g-color-white-darker">Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Owl Carousel v4 -->
-            </div>
-        </div>
-    </section>
-    <!--End of Gallery Section-->
-    <!--Awards Section-->
-    <section id="awards">
-        <div class="awards-section">
-            <div class="container content-md">
-                <div class="row">
-                    <div class="col-md-3 g-heading-v7 text-center">
-                        <h2 class="h2 g-mb-30"><em class="block-name"></em>أمانتك</h2>
-                        <p class="g-mb-30">تعتبر المفقودات والمعثورات أحد المشاكل المتكررة التي تواجه الحجيج في رحلتهم والتي تلقي بعبء كبير على كاهل السلطات المختصة.</p>
-                    </div>
-                    <!-- awards -->
-                    <div class="col-md-9 awards-desc">
-                        <div class="row">
-                            <br>
-                            <div class="row">
-                                تم تطوير منصة "أمانتك" لتحقيق هدفين في آن واحد:
-                                1. التيسير على الحجيج في حل مشكلة المفقودات،
-                                2. تخفيف العبء عن السلطات والأجهزة المختلفة.
-
-                                كيفية عمل المنصة:
-                                يتم تسجيل طلبات المفقودات من خلال الموقع الألكتروني، ويتولى معالجتها فريق مختص بهذا الشأن، حتى الوصول الى التسليم للمفقودات.
-
-                                يقوم صاحب المفقودات ب:
-                                1. تسجيل طلب للبحث عن مفقودات، مع تحديد المواصفات
-                                2. متابعة حالة الطلب والتواصل والتحديثات للردود أونلاين
-                                3. إلغاء الطلب السابق (في حال تم العثور على المفقودات)
-
-                                <br /><br /><br /><br /><br /><br /><br />
-                            </div>
-                    </div>
-                </div>
-            </div>
-        
-        </div>
-    </section>
-    <!--End of Awards Section-->
-    <!--Contact Section-->
-    <section id="contact">
-        <div class="container content-md g-heading-v7 text-center">
-            <h2 class="h2 g-mb-70"><em class="block-name"></em> للتواصل معنا</h2>
-            <!-- form and contatc information -->
-            <div class="row">
-                <div class="col-md-9 col-sm-6 form no-side-padding">
-                    <form action="#" method="post" id="sky-form3" class="sky-form contact-style">
-                        <fieldset>
-                            <div class="row margin-bottom-30">
-                                <div class="col-md-6 col-md-offset-0">
-                                    <div>
-                                        <input type="text" name="name" id="name" class="form-control" placeholder="الاسم">
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-md-offset-0">
-                                    <div>
-                                        <input type="text" name="phone" id="phone" class="form-control" placeholder="رقم التواصل">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row margin-bottom-30">
-                                <div class="col-md-6 col-md-offset-0">
-                                    <div>
-                                        <input type="text" name="email" id="email" class="form-control" placeholder="البريد الالكتروني *">
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-md-offset-0">
-                                    <div>
-                                        <input type="text" name="subject" id="subject" class="form-control" placeholder="الموضوع">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row margin-bottom-30">
-                                <div class="col-md-12 col-md-offset-0">
-                                    <div>
-                                        <textarea rows="4" name="message" id="message" class="form-control g-textarea-noresize" placeholder="الرسالة"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <p><button type="submit" class="btn-u btn-u-lg btn-u-bg-default btn-u-upper">ارســال</button></p>
-                        </fieldset>
-                        <div class="message">
-                            <i class="rounded-x fa fa-check"></i>
-                            <p>تم ارسال ملاحظتكم</p>
-                        </div>
-                    </form>
-                </div>
-             
-            </div>
-        </div>
-        <div class="container-fluid no-side-padding">
-            <!-- google maps -->
-            <!-- 			<div class="map-div">
-                            <i class="fa fa-map-marker icon"></i>
-                            <button class="map-btn show-map" id="MapBtn" data-toggle="collapse" data-target="#map-wrapper">
-                            Show map</button>
-                        </div>
-
-                        <div class="collapse" id="map-wrapper">
-                            <div id="map"></div>
-                        </div> -->
-            
-        </div>
-        <!-- copyrights -->
-        <div class="copyrights container-fluid bg-color-com page-scroll">
-            <div clas="container">
-                هاكثون الحج
-               
-            </div>
-        </div>
-    </section>
-    <!--End of Contact Section-->
-    <!-- JS Global Compulsory -->
-    <script src="~/Content/homePageCss/assets/plugins/jquery/jquery.min.js"></script>
-    <script src="~/Content/homePageCss/assets/plugins/jquery/jquery-migrate.min.js"></script>
-    <script src="~/Content/homePageCss/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <!-- JS Implementing Plugins -->
-    <script src="~/Content/homePageCss/assets/plugins/smoothScroll.js"></script>
-    <script src="~/Content/homePageCss/assets/plugins/jquery.easing.min.js"></script>
-    <script src="~/Content/homePageCss/assets/plugins/pace/pace.min.js"></script>
-    <script src="~/Content/homePageCss/assets/plugins/owl-carousel2/owl.carousel.min.js"></script>
-    <script src="~/Content/homePageCss/assets/plugins/sky-forms-pro/skyforms/js/jquery.form.min.js"></script>
-    <script src="~/Content/homePageCss/assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js"></script>
-    <script src="~/Content/homePageCss/assets/plugins/cube-portfolio/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
-    <script src="~/Content/homePageCss/assets/plugins/modernizr.js"></script>
-    <script src="~/Content/homePageCss/assets/plugins/backstretch/jquery.backstretch.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?signed_in=true&amp;callback=initMap" async defer></script>
-    <script src="~/Content/homePageCss/Custom/assets/js/plugins/gmaps-ini-rtl.js"></script>
-    <!-- JS Page Level-->
-    <script src="~/Content/homePageCss/assets/js/one.app.js"></script>
-    <script src="~/Content/homePageCss/Custom/assets/js/plugins/pace-loader.js"></script>
-    <script src="~/Content/homePageCss/Custom/assets/js/plugins/owl-carousel2-rtl.js"></script>
-    <script src="~/Content/homePageCss/Custom/assets/js/plugins/cube-portfolio-lightbox.js"></script>
-    @*<script src="~/Content/homePageCss/Custom/assets/js/plugins/promo-rtl.js"></script>*@
-    <script src="~/Content/homePageCss/Custom/assets/js/forms/contact.js"></script>
-    <script>
-		$(function() {
-			App.init();
-			OwlCarousel.initOwlCarousel();
-			ContactForm.initContactForm();
-		});
+    <!-- Other scripts -->
+    <script type="text/javascript">
+        // Decide whether to suppress missing file error or not based on preference setting
+        var suppressMissingFileError = false
     </script>
-    <!--[if lt IE 10]>
-      <script src="~/Content/homePageCss/assets/plugins/sky-forms-pro/skyforms/js/jquery.placeholder.min.js"></script>
-    <![endif]-->
+     
+    <!--HTML Widget code-->
+    @*<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>*@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script type="text/javascript">
+        !function (t) { "use strict"; t.fn.countUp = function (e) { var a = t.extend({ time: 2e3, delay: 10 }, e); return this.each(function () { var e = t(this), n = a, u = function () { e.data("counterupTo") || e.data("counterupTo", e.text()); var t = parseInt(e.data("counter-time")) > 0 ? parseInt(e.data("counter-time")) : n.time, a = parseInt(e.data("counter-delay")) > 0 ? parseInt(e.data("counter-delay")) : n.delay, u = t / a, r = e.data("counterupTo"), o = [r], c = /[0-9]+,[0-9]+/.test(r); r = r.replace(/,/g, ""); for (var d = (/^[0-9]+$/.test(r), /^[0-9]+\.[0-9]+$/.test(r)), s = d ? (r.split(".")[1] || []).length : 0, i = u; i >= 1; i--) { var p = parseInt(Math.round(r / u * i)); if (d && (p = parseFloat(r / u * i).toFixed(s)), c) for (; /(\d+)(\d{3})/.test(p.toString());)p = p.toString().replace(/(\d+)(\d{3})/, "$1,$2"); o.unshift(p) } e.data("counterup-nums", o), e.text("0"); var f = function () { e.text(e.data("counterup-nums").shift()), e.data("counterup-nums").length ? setTimeout(e.data("counterup-func"), a) : (delete e.data("counterup-nums"), e.data("counterup-nums", null), e.data("counterup-func", null)) }; e.data("counterup-func", f), setTimeout(e.data("counterup-func"), a) }; e.waypoint(u, { offset: "100%", triggerOnce: !0 }) }) } }(jQuery);
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('.ame-counter').countUp({
+                'time': 3000,
+                'delay': 10
+            });
+
+        });
+     </script>
+
+
+    <script>
+        function MissionItem() {
+            @*window.open("@Url.Action("QueryForItem", "Home",new { @serialNumber= "0151117914" },null)");*@
+            window.open("@Url.Action("CreateItemMission", "Home")");
+        }
+
+           function QueryOpen() {
+            window.open("@Url.Action("QueryForItem", "Home")")
+
+        }
+
+           function Login() {
+            window.open("@Url.Action("Login", "Account")")
+
+        }
+    </script>
 </body>
 </html>

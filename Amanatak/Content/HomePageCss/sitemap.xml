@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://musefree2.com/index.html</loc>
+    <lastmod>2018-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <image:image>
+      <image:loc>http://musefree2.com/images/3icon.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>http://musefree2.com/images/2icon.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>http://musefree2.com/images/1icon.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>http://musefree2.com/images/6icon.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>http://musefree2.com/images/5icon.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>http://musefree2.com/images/4icon.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>http://musefree2.com/images/qoute.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>http://musefree2.com/images/heart.png</image:loc>
+    </image:image>
+  </url>
+</urlset>

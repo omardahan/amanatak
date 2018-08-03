@@ -1,0 +1,203 @@
+﻿
+@model PagedList.IPagedList<AmanatakBLL.Models.ItemOwner>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+<title>مفقودات تم تسليمها</title>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<!-- MAIN CONTENT -->
+<div id="content">
+    <!-- row -->
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+            <!-- sparks -->
+            <!-- end sparks -->
+        </div>
+        <!-- end col -->
+    </div>
+    <!-- end row -->
+    <!-- widget grid -->
+    <section id="widget-grid">
+        <!-- row -->
+        <div class="row">
+
+            <header>
+                 <h2>مفقودات تم تسليمها</h2>
+
+            </header>
+
+            <!-- widget div-->
+            <div>
+
+                <!-- widget edit box -->
+                <div class="jarviswidget-editbox">
+                    <!-- This area used as dropdown edit box -->
+
+                </div>
+
+                <div class="widget-body ">
+
+                    <div class="dt-toolbar">
+                        <div class="col-xs-12 col-sm-6">
+
+                            @using (Html.BeginForm("Index", "MissingItem", FormMethod.Get))
+                            {
+
+
+                                <div class="form-inline">
+                                    <div class="input-group ">
+
+
+
+                                        <span class="input-group-addon"><i class="fa fa-tag"></i></span>
+                                        <div class="icon-addon ">
+
+                                            @Html.TextBox("searchString", ViewBag.CurrentFilter as string, new { @class = "form-control ", placeholder = "كلمة للبحث" })
+
+
+                                        </div>
+                                        <span class="input-group-btn">
+                                            <button type="submit" value="Search" class="btn btn-default"><span><i class="fa fa-search"></i> بحث</span></button>
+                                        </span>
+
+                                    </div>
+
+                                </div>
+                            }
+                        </div>
+
+                    </div>
+                    <div class="dt-toolbar">
+                        <div class="col-xs-12 col-sm-6">
+                            <div id="datatable_tabletools_filter" class="dataTables_filter">
+                                 
+
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div id="datatable_tabletools_filter" class="dataTables_filter">
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+
+
+                        <table class="table table-bordered table-striped table-condensed table-hover dataTable">
+                            <thead>
+                                <tr>
+                                    @*<th class="smart-form has-tickbox">
+                                            <label class="checkbox">
+                                                <input type="checkbox" name="checkbox-inline">
+                                                <i></i>
+                                            </label>
+                                        </th>*@
+                                    <th>
+                                        الإسم الكامل
+                                    </th>
+                                    <th>
+                                        رقم الهوية
+                                    </th>
+                                    <th>
+                                        التصنيف
+                                    </th>
+                                    <th>
+                                        رقم الطلب
+                                    </th>
+                                    <th>
+                                        الوصف
+                                    </th>
+
+                                    
+                                    <th>
+                                    </th>
+
+
+
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+
+
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.FullName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.IdentificationNo)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Item.ItemType.Name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Item.SerialNumber)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Item.ItemDetails)
+                                        </td>
+                                    
+
+                                        
+
+
+                                        <td>
+
+                                            <ul class="list-inline table-buttons">
+
+
+                                                 <li><a href="@Url.Action("Details", new { id = item.Id })" class="btn btn-sm btn-default"> <span class="fa fa-eye"></span> تفاصيل </a></li>
+
+                                                
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div class="dt-toolbar-footer">
+                        <div class="col-sm-6 col-xs-12 hidden-xs">
+                            <div class="dataTables_info" id="datatable_col_reorder_info" role="status" aria-live="polite">
+                                صفحة <span class="txt-color-darken">@(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)</span>
+                                من <span class="text-primary">@Model.PageCount</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xs-12">
+                            <div class="dataTables_paginate paging_simple_numbers" id="datatable_col_reorder_paginate">
+                                @Html.PagedListPager(Model, page => Url.Action("Index", new { page, currentFilter = ViewBag.CurrentFilter }))
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end widget content -->
+
+            </div>
+            <!-- end widget div -->
+
+        </div>
+        <!-- end widget -->
+        <!-- end row -->
+
+    </section>
+    <!-- end widget grid -->
+</div>
+<!-- END MAIN CONTENT -->

@@ -1,0 +1,155 @@
+﻿ @using Amanatak.Models
+@model MissingItemViewModel
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+
+
+
+<!-- MAIN CONTENT -->
+<div id="content">
+    <!-- row -->
+    <div class="row">
+        <!-- col -->
+        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
+            <h1 class="page-title txt-color-blueDark">
+                <!-- PAGE HEADER -->
+                  
+            </h1>
+        </div>
+        <!-- end col -->
+        <!-- right side of the page with the sparkline graphs -->
+        <!-- col -->
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+            
+        </div>
+        <!-- end col -->
+    </div>
+    <!-- end row -->
+    <!-- widget grid -->
+    <section id="widget-grid">
+        <!-- row -->
+        <div class="row">
+            <!-- NEW WIDGET START -->
+            <article class="col-sm-12 col-md-12 col-lg-8 col-lg-offset-2">
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
+                     data-widget-deletebutton="false">
+                    
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+                        <h2>تعديل مفقودة</h2>
+                    </header>
+                    <!-- widget div-->
+                    <div>
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                            <!-- This area used as dropdown edit box -->
+                        </div>
+                        <!-- end widget edit box -->
+                        <!-- widget content -->
+                        <div class="widget-body">
+
+
+                            @using (Html.BeginForm("Edit", "FoundItems", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                                @Html.HiddenFor(model => model.Item.Id)
+                           
+
+                                @Html.HiddenFor(model => model.Item.UserCreated)
+                                @Html.HiddenFor(model => model.Item.UserType)
+                                @Html.HiddenFor(model => model.Item.DateCreated)
+                                @Html.HiddenFor(model => model.Item.Deliveried)
+                                @Html.HiddenFor(model => model.Item.ItemTypeId)
+                                @Html.HiddenFor(model => model.Item.SerialNumber)
+                                @Html.HiddenFor(model => model.Item.UserId)
+                                
+
+
+
+                                @Html.AntiForgeryToken()
+
+                                <div class="form-horizontal">
+                                    <hr />
+                                    @Html.ValidationSummary(true)
+
+
+
+                                    <div class="form-group">
+                                        @Html.Label("النوع", null, new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.DropDownListFor(model => model.Item.ItemTypeId, ViewBag.ItemTypeId as SelectList, "يرجى إختيار" + " " + "نوع القطعة المفقودة", new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.Item.ItemTypeId)
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.Label("التفاصيل", null, new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.TextAreaFor(model => model.Item.ItemDetails, new { @class = "control-control", @style = "width:100%" })
+                                            @Html.ValidationMessageFor(model => model.Item.ItemDetails)
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.Label("أين وجدت", null, new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.Item.AdressFound, new { @style = "width:100%" })
+                                            @Html.ValidationMessageFor(model => model.Item.AdressFound)
+                                        </div>
+                                    </div>
+
+ 
+                                    <div class="form-group">
+                                        @Html.Label("الصور", null, new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+
+                                            @Html.TextBoxFor(model => model.ItemImages, "", new { @type = "file", @multiple = "multiple", @accept = "image/jpeg,image/png,jpg|png" })
+
+                                            @Html.ValidationMessageFor(model => model.ItemImages)
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-actions">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <a class="btn btn-default" type="button" href="@Url.Action("Index")">
+                                                    عودة إلى القائمة
+                                                </a>
+                                                <button class="btn btn-primary" type="submit">
+                                                    <i class="fa fa-save"></i>
+                                                    تعديل
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            }
+
+ </div>
+                        <!-- end widget content -->
+                    </div>
+                    <!-- end widget div -->
+                </div>
+                <!-- end widget -->
+
+            </article>
+            <!-- WIDGET END -->
+        </div>
+        <!-- end row -->
+
+    </section>
+    <!-- end widget grid -->
+</div>
+<!-- END MAIN CONTENT -->
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

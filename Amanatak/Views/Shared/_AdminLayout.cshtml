@@ -1,6 +1,5 @@
 ﻿
-<!DOCTYPE html>
-<html lang="ar-sa" id="@ViewBag.PageId" class="">
+ <html lang="ar-sa" id="@ViewBag.PageId" class="">
 
 <head>
     <meta charset=" utf-8">
@@ -54,105 +53,19 @@
     <link rel='stylesheet' type='text/css' href="https://fonts.googleapis.com/css?family=Cairo">
 
 </head>
-<body class=" smart-style-6 smart-rtl">
-    <header id="header">
-        <div id="logo-group">
-
-            <!-- PLACE YOUR LOGO HERE -->
-             <span > </span>
-            <!-- END LOGO PLACEHOLDER -->
-            <!-- Note: The activity badge color changes when clicked and resets the number to 0
-            Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
-            <span id="activity" class="activity-dropdown"> <i class="fa fa-user"></i> <b class="badge"> 21 </b> </span>
-
-            <!-- AJAX-DROPDOWN : control this dropdown height, look and feel from the LESS variable file -->
-            <div class="ajax-dropdown" style="    height: 100%;">
-
-                <!-- the ID links are fetched via AJAX to the ajax container "ajax-notifications" -->
-                <div class="btn-group btn-group-justified" data-toggle="buttons">
-                    <label class="btn btn-default">
-                        <a href="sad.hh">
-                            بلاغات جديدة
-                        </a>
-                    </label>
-                    
-                </div>
-
-            
-               
-                <!-- end footer -->
-
-            </div>
-            <!-- END AJAX-DROPDOWN -->
-        </div>
-
-        <!-- pulled right: nav area -->
-        <div class="pull-right">
-
-            <!-- collapse menu button -->
-            <div id="hide-menu" class="btn-header pull-right">
-                <span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
-            </div>
-            <!-- end collapse menu -->
-            <!-- #MOBILE -->
-            <!-- Top menu profile link : this shows only when top menu is active -->
-            <ul id="mobile-profile-img" class="header-dropdown-list hidden-xs padding-5">
-                <li class="">
-                    <a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown">
-                        <img src="img/avatars/sunny.png" alt="John Doe" class="online" />
-                    </a>
-                    <ul class="dropdown-menu pull-right">
-                        <li>
-                            <a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0"><i class="fa fa-cog"></i> Setting</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="profile.html" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>rofile</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="toggleShortcut"><i class="fa fa-arrow-down"></i> <u>S</u>hortcut</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="launchFullscreen"><i class="fa fa-arrows-alt"></i> Full <u>S</u>creen</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="login.html" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"><i class="fa fa-sign-out fa-lg"></i> <strong><u>L</u>ogout</strong></a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-
-            <!-- logout button -->
-            <div id="logout" class="btn-header transparent pull-right">
-                <span> <a href="login.html" title="Sign Out" data-action="userLogout" data-logout-msg="You can improve your security further after logging out by closing this opened browser"><i class="fa fa-sign-out"></i></a> </span>
-            </div>
-            <!-- end logout button -->
-            <!-- search mobile button (this is hidden till mobile view port) -->
-            <div id="search-mobile" class="btn-header transparent pull-right">
-                <span> <a href="javascript:void(0)" title="Search"><i class="fa fa-search"></i></a> </span>
-            </div>
-            <!-- end search mobile button -->
-       
-
-        </div>
-        <!-- end pulled right: nav area -->
-
-    </header>
+<body class=" smart-style-6 smart-rtl" data-gr-c-s-loaded="false">
+     
     <aside id="left-panel">
         <nav>
-            <!--
-            NOTE: Notice the gaps after each icon usage <i></i>..
-            Please note that these links work a bit different than
-            traditional href="" links. See documentation for details.
-            -->
-
-            <ul style="">
+           
+            <ul  >
                 @* dashboard *@
                 <li class="active open">
-                    <a href="#" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">لوحة التحكم</span></a>
+                    <a  href="@Url.Action("Index", "Home",new { area=""},null)" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">الصفحة الرئيسية</span></a>
+                </li>
+                
+                <li class="active open">
+                    <a  href="@Url.Action("Index", "Main",new { area="Operator"},null)" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">لوحة التحكم</span></a>
                 </li>
                  
                 <li>
@@ -162,15 +75,27 @@
                     <a href="@Url.Action("Index", "MissingItem",new { area="Operator"},null)"><i class="fa fa-lg fa-fw fa-list-alt"></i> <span class="menu-item-parent">لائحة المفقودات</span></a>
                 </li>
                 <li>
-                    <a href="@Url.Action("MissingItemDeliverd", "MissingItem",new { area="Operator"},null)"><i class="fa fa-lg fa-fw fa-shopping-cart"></i> <span class="menu-item-parent">مفقودات تم تسليمها</span></a>
+                    <a href="@Url.Action("ItemDeliveried", "MissingItem",new { area="Operator"},null)"><i class="fa fa-lg fa-fw fa-shopping-cart"></i> <span class="menu-item-parent">مفقودات تم تسليمها</span></a>
                 </li>
+
+                <li>
+                    <a href="@Url.Action("Create", "FoundItems",new { area="Operator"},null)"><i class="fa fa-lg fa-pencil-square-o"></i> <span class="menu-item-parent">إضافة معثورات</span></a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index", "FoundItems",new { area="Operator"},null)"><i class="fa fa-lg fa-fw fa-list-alt"></i> <span class="menu-item-parent">لائحة المعثورات</span></a>
+                </li>
+
+
+              
+                <li>
+                    <a href="@Url.Action("Index", "ItemTypes",new { area="admin"},null)"><i class="fa fa-lg fa-fw fa-list-alt"></i> <span class="menu-item-parent">أصناف المفقودات</span></a>
+                </li>
+               
             </ul>
         </nav>
     </aside>
-    @*@{ Html.RenderPartialIf("_AsideDynamic", Request.IsAuthenticated); }*@
-    <div id="main" role="main">
-        @*@{ Html.RenderPartialIf("_Ribbon", Request.IsAuthenticated); }*@
-
+     <div id="main" role="main">
+ 
         @if (ViewBag.ErrorMessage != null)
         {
 
@@ -185,23 +110,16 @@
 
 
         }
-        @* <div class="loader"></div>*@
-
+ 
 
 
 
         @RenderBody()
-        @RenderSection("scripts", required: false)
 
 
     </div>
 
-    @{
-        //Html.RenderPartial("_Footer");
-    }
-    @*@{ Html.RenderPartial("_Scripts", RenderSection("pagespecific", false)); }
-
-        @{ Html.RenderPartial("_Scripts", RenderSection("pagespecific", false)); }*@
+    
 </body>
 
 </html>
@@ -266,9 +184,14 @@
 <script src="~/Scripts/plugin/flot/jquery.flot.time.min.js"></script>
 <script src="~/Scripts/plugin/flot/jquery.flot.tooltip.min.js"></script>
 
+
 <!-- Vector Maps Plugin: Vectormap engine, Vectormap language -->
 <script src="~/Scripts/plugin/vectormap/jquery-jvectormap-1.2.2.min.js"></script>
 <script src="~/Scripts/plugin/vectormap/jquery-jvectormap-world-mill-en.js"></script>
 <!-- Full Calendar -->
 <script src="~/Scripts/plugin/moment/moment.min.js"></script>
+<script src="~/Scripts/plugin/chartjs/chart.js"></script>
+<script src="~/Scripts/plugin/chartjs/Chart.bundle.min.js"></script>
+
 <script src="~/Scripts/plugin/fullcalendar/jquery.fullcalendar.min.js"></script>
+@RenderSection("scripts", required: false)

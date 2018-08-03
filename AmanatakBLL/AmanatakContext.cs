@@ -14,7 +14,7 @@ namespace AmanatakBLL
     {
         public DbSet<Item> Item { get; set; }
         public DbSet<ItemType> ItemType { get; set; }
-        public DbSet<History> History { get; set; }
+        public DbSet<ItemsHistory> ItemsHistory { get; set; }
 
         public DbSet<TestClass> TestClass { get; set; }
 
@@ -22,7 +22,8 @@ namespace AmanatakBLL
         public DbSet<IdentificationType> IdentificationType { get; set; }
         public DbSet<Conversation> Conversation { get; set; }
         public DbSet<ConversationMessages> ConversationMessages { get; set; }
-
+        public DbSet<ItemImages> ItemImages { get; set; }
+ 
 
 
         public override int SaveChanges()

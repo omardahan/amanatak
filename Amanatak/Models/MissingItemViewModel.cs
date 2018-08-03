@@ -10,8 +10,8 @@ namespace Amanatak.Models
     {
 
         public Item Item { get; set; }
-        public List<ItemImages> ItemImages { get; set; }
+        public List<HttpPostedFileBase> ItemImages { get; set; }
+        public List<ItemImages> ItemImagesList { get; set; }
         public ItemOwner ItemOwner { get; set; }
-        public History History { get; set; }
-    }
+     }
 }

@@ -6,8 +6,7 @@
 
 
 
-
-
+<title>لائحة المفقودات</title>
 
 
 @{
@@ -36,8 +35,7 @@
         <div class="row">
             
                     <header>
-                        <span class="widget-icon"> <i class="fa fa-th-list"></i> </span>
-                        <h2>Index</h2>
+                         <h2>لائحة المفقوادات</h2>
 
                     </header>
 
@@ -55,7 +53,7 @@
                             <div class="dt-toolbar">
                                 <div class="col-xs-12 col-sm-6">
 
-  @using (Html.BeginForm("Index", "Item", FormMethod.Get))
+  @using (Html.BeginForm("Index", "MissingItem", FormMethod.Get))
                                     {
                                   
 
@@ -72,7 +70,7 @@
 
                                             </div>
                                             <span class="input-group-btn">
-                                                <button type="submit" value="Search" class="btn btn-default"><span><i class="fa fa-search"></i> "بحث"</span></button>
+                                                <button type="submit" value="Search" class="btn btn-default"><span><i class="fa fa-search"></i>  بحث </span></button>
                                             </span>
 
                                         </div>
@@ -114,19 +112,20 @@
                                                 </label>
                                             </th>*@
                                             <th>
-             @Html.DisplayNameFor(model => model.First().FullName)
+
+                                                الإسم الكامل
         </th>
    <th>
-             @Html.DisplayNameFor(model => model.First().IdentificationNo)
+           رقم الهوية
         </th>
         <th>
-             @Html.DisplayNameFor(model => model.First().Item.ItemType.Name)
+           التصنيف
         </th>
         <th>
-             @Html.DisplayNameFor(model => model.First().Item.SerialNumber)
+            رقم الطلب
         </th>
         <th>
-             @Html.DisplayNameFor(model => model.First().Item.ItemDetails)
+             الوصف
         </th>
        
         <th>
@@ -134,7 +133,7 @@
         
      
        
-        <th></th>
+        
     </tr>
                                     </thead>
                                     <tbody>
@@ -158,9 +157,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.Item.ItemDetails)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Item.UserType)
-        </td>
+      
      
          
        
@@ -168,9 +165,10 @@
 
   <ul class="list-inline table-buttons">
                                                         
-                                                        <li><a href="@Url.Action("Details", new { id = item.Id })" class="btn btn-sm btn-default"> <span class="fa fa-eye"></span> تفاصيل </a></li>
+                                                        
                                                         <li><a href="@Url.Action("Edit", new { id = item.Id })" class="btn btn-sm btn-primary"><span class="fa fa-edit"></span> تعديل</a></li>
-                                                        @*<li><a href="@Url.Action("Delete", new { id = item.Id })" class="btn btn-sm btn-danger"><span class="fa fa-minus"></span> حذف</a></li>*@
+                                                        <li><a href="@Url.Action("Delete", new { id = item.Id })" class="btn btn-sm btn-danger"><span class="fa fa-minus"></span> حذف</a></li>
+                                                              <li><a href="@Url.Action("Details", new { id = item.Id })" class="btn btn-sm btn-default"> <span class="fa fa-eye"></span> تفاصيل وتسليم </a></li>
 
                                                         @*<li>
                                                             <div class="btn-group">

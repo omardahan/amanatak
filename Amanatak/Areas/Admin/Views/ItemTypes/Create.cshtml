@@ -9,7 +9,7 @@
 
 
 
-
+<title>أصناف المفقودات</title>
 
 <!-- MAIN CONTENT -->
 <div id="content">
@@ -46,23 +46,10 @@
                 <!-- Widget ID (each widget will need unique ID)-->
                 <div class="jarviswidget" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
                      data-widget-deletebutton="false">
-                    <!-- widget options:
-            usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-
-            data-widget-colorbutton="false"
-            data-widget-editbutton="false"
-            data-widget-togglebutton="false"
-            data-widget-deletebutton="false"
-            data-widget-fullscreenbutton="false"
-            data-widget-custombutton="false"
-            data-widget-collapsed="true"
-            data-widget-sortable="false"
-
-            -->
+                
                     <header>
                         <span class="widget-icon"> <i class="fa fa-plus"></i> </span>
-                        <h2>Create</h2>
-                    </header>
+                     </header>
                     <!-- widget div-->
                     <div>
                         <!-- widget edit box -->
@@ -85,7 +72,7 @@
         @Html.ValidationSummary(true)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
+            الاسم
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Name)
                 @Html.ValidationMessageFor(model => model.Name)
@@ -93,7 +80,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Status, new { @class = "control-label col-md-2" })
+            الحالة
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Status)
                 @Html.ValidationMessageFor(model => model.Status)

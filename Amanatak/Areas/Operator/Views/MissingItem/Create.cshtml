@@ -6,7 +6,7 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-
+<title>  إضافة بلاغ عن مفقودات</title>
 <!-- Latest compiled and minified CSS -->
 <!-- MAIN CONTENT -->
 <div id="content">
@@ -19,7 +19,7 @@
 
 
                 <span>
-
+                    إضافة بلاغ عن مفقودات
                 </span>
             </h1>
         </div>
@@ -58,18 +58,19 @@
 
 
 
-                            @using (Html.BeginForm())
-                            {
+                            @*@using (Html.BeginForm())*@
+            @using (Html.BeginForm("Create", "MissingItem", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
                                 @Html.AntiForgeryToken()
 
                                 <div class="form-horizontal">
                                     <hr />
                                     @Html.ValidationSummary(true)
 
-
+                                  
 
                                     <div class="form-group">
-                                        @Html.Label("النوع", null, new { @class = "control-label col-md-2" })
+                                        @Html.Label("التصنيف", null, new { @class = "control-label col-md-2" })
                                         <div class="col-md-10">
                                             @Html.DropDownListFor(model => model.Item.ItemTypeId, ViewBag.ItemTypeId as SelectList, "يرجى إختيار" + " " + "نوع القطعة المفقودة", new { @class = "form-control" })
                                             @Html.ValidationMessageFor(model => model.Item.ItemTypeId)
@@ -77,14 +78,14 @@
                                     </div>
 
                                     <div class="form-group">
-                                        @Html.Label("التفاصيل", null, new { @class = "control-label col-md-2" })
+                                        @Html.Label("وصف ", null, new { @class = "control-label col-md-2" })
                                         <div class="col-md-10">
                                             @Html.TextAreaFor(model => model.Item.ItemDetails, new { @class = "control-control", @style = "width:100%" })
                                             @Html.ValidationMessageFor(model => model.Item.ItemDetails)
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        @Html.Label("أين وجدت", null, new { @class = "control-label col-md-2" })
+                                        @Html.Label("أين فقدت", null, new { @class = "control-label col-md-2" })
                                         <div class="col-md-10">
                                             @Html.EditorFor(model => model.Item.AdressFound, new { @style = "width:100%" })
                                             @Html.ValidationMessageFor(model => model.Item.AdressFound)
@@ -94,55 +95,19 @@
 
                                     @**OwnerInfo*@
                                     <div class="form-group">
-                                        @Html.Label("اسم المالك", null, new { @class = "control-label col-md-2" })
+                                        @Html.Label("الإسم", null, new { @class = "control-label col-md-2" })
                                         <div class="col-md-10">
                                             @Html.EditorFor(model => model.ItemOwner.FirstName)
                                             @Html.ValidationMessageFor(model => model.ItemOwner.FirstName)
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        @Html.Label("الإسم الاخير", null, new { @class = "control-label col-md-2" })
-                                        <div class="col-md-10">
-                                            @Html.EditorFor(model => model.ItemOwner.LastName)
-                                            @Html.ValidationMessageFor(model => model.ItemOwner.LastName)
-                                        </div>
-                                    </div>
+                                   
 
-                                    <div class="form-group">
-                                        @Html.Label("الإسم الأوسط", null, new { @class = "control-label col-md-2" })
-                                        <div class="col-md-10">
-                                            @Html.EditorFor(model => model.ItemOwner.MiddleName)
-                                            @Html.ValidationMessageFor(model => model.ItemOwner.MiddleName)
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        @Html.Label("اسم الأب", null, new { @class = "control-label col-md-2" })
-                                        <div class="col-md-10">
-                                            @Html.EditorFor(model => model.ItemOwner.FatherName)
-                                            @Html.ValidationMessageFor(model => model.ItemOwner.FatherName)
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        @Html.Label("اسم الام", null, new { @class = "control-label col-md-2" })            <div class="col-md-10">
-                                            @Html.EditorFor(model => model.ItemOwner.MotherName)
-                                            @Html.ValidationMessageFor(model => model.ItemOwner.MotherName)
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        @Html.Label("تاريخ الميلاد", null, new { @class = "control-label col-md-2" })
-                                        <div class="col-md-10">
-                                            @Html.EditorFor(model => model.ItemOwner.DateOfBirth, "DateNTime")
-                                            @Html.ValidationMessageFor(model => model.ItemOwner.DateOfBirth)
-                                        </div>
-                                    </div>
                                     <div class="form-group">
                                         @Html.Label("الجنسية", null, new { @class = "control-label col-md-2" })
                                         <div class="col-md-10">
-                                            @Html.DropDownListFor(model => model.ItemOwner.NationalityId, ViewBag.NationalityId as SelectList, "يرجى إختيار" + " " + "الجتسية", new { @class = "form-control" })
+                                            @Html.DropDownListFor(model => model.ItemOwner.NationalityId, ViewBag.NationalityId as SelectList, "يرجى إختيار" + " " + "الجنسية", new { @class = "form-control" })
                                             @Html.ValidationMessageFor(model => model.ItemOwner.NationalityId)
                                         </div>
                                     </div>
@@ -175,7 +140,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        @Html.Label("جوال", null, new { @class = "control-label col-md-2" })
+                                        @Html.Label("جوال للتواصل", null, new { @class = "control-label col-md-2" })
                                         <div class="col-md-10">
                                             @Html.EditorFor(model => model.ItemOwner.Mobile)
                                             @Html.ValidationMessageFor(model => model.ItemOwner.Mobile)
@@ -191,14 +156,23 @@
                                     </div>
 
                                     <div class="form-group">
-                                        @Html.Label("عنوان الشخص", null, new { @class = "control-label col-md-2" })
+                                        @Html.Label("عنوان الإقامة الحالي", null, new { @class = "control-label col-md-2" })
                                         <div class="col-md-10">
                                             @Html.EditorFor(model => model.ItemOwner.Address)
                                             @Html.ValidationMessageFor(model => model.ItemOwner.Address)
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        @Html.Label("الصور", null, new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                             
+                                            @Html.TextBoxFor(model => model.ItemImages, "", new { @type = "file", @multiple = "multiple", @accept = "image/jpeg,image/png,jpg|png" })
 
-
+                                            @Html.ValidationMessageFor(model => model.ItemImages)
+                                        </div>
+                                    </div>
+                                     
+                                   
                                     <div class="form-actions">
                                         <div class="row">
                                             <div class="col-md-12">
@@ -214,8 +188,8 @@
                                     </div>
 
                                 </div>
-                            }
 
+            }
                         </div>
                         <!-- end widget content -->
                     </div>

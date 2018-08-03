@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 namespace AmanatakBLL.Models
 {
 
-    public class Item : BaseEntity
+    
+     public class Item : BaseEntity
     {
        
         [Key]
@@ -23,9 +24,13 @@ namespace AmanatakBLL.Models
         [ForeignKey("ItemTypeId")]
         public virtual ItemType ItemType { get; set; }
         [DataType(DataType.MultilineText)]
+        [Required(ErrorMessage = "حقل إجباري")]
+
         public string ItemDetails { get; set; }
         public UserType UserType { get; set; }
+        public ItemCategory ItemCategory { get; set; }
 
+        
         public string   AdressFound { get; set; }
 
 
@@ -36,15 +41,13 @@ namespace AmanatakBLL.Models
         public bool Deliveried { get; set; }
 
         public virtual ICollection<ItemImages> ItemImages { get; set; }
-        /*
-            var SeralNumber = "";
-        int Count0 = 9 - (Id.ToString().Length) ;
 
-        for (int i = 0; i<Count0; i++)
-        {
-            SeralNumber += 0;
-        }
-        */
+
+
+   
+
+        
+ 
     }
     public class ItemImages : BaseEntity
     {
@@ -54,6 +57,8 @@ namespace AmanatakBLL.Models
         [ForeignKey("ItemId")]
         public virtual Item Item { get; set; }
         public int ItemId { get; set; }
+
+      
 
         public string ImagePath { get; set; }
     }
@@ -101,9 +106,9 @@ namespace AmanatakBLL.Models
         [ForeignKey("ItemId")]
         public virtual Item Item { get; set; }
         public int ItemId { get; set; }
-                [Required(ErrorMessage = "حقل إجباري")]
+               
         public string FirstName { get; set; }
-                [Required(ErrorMessage = "حقل إجباري")]
+                
         public string LastName { get; set; }
 
         public string FullName
@@ -115,24 +120,7 @@ namespace AmanatakBLL.Models
         }
 
 
-        public string MiddleName
-        {
-            get
-            {
-                return FatherName;
-            }
-            set
-            {
-                FatherName = value;
-            }
-        }
-
-        public string FatherName { get; set; }
-        public string MotherName { get; set; }
-
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime? DateOfBirth { get; set; }
+   
 
         public bool? Gender { get; set; }
 
@@ -158,24 +146,28 @@ namespace AmanatakBLL.Models
     }
 
  
-    public class History : BaseEntity
+    public class ItemsHistory : BaseEntity
     {
         public int Id { get; set; }
         public int ItemId { get; set; }
-        [ForeignKey("ItemId")]
-        public virtual Item Item { get; set; }
 
-        public Action Action { get; set; }
+        public int? ItemMissingId { get; set; }
+
+        public DateTime DeliveryTime { get; set; }
+        public string DeliveryNamePerson { get; set; }
+        [DataType(DataType.MultilineText)]
+
+        public string Details { get; set; }
 
         public int UserId { get; set; }
     }
 
 
     //Type of Action on history for exp. Delivered , BackToOwner
-    public enum Action
+    public enum ItemCategory
     {
-        NewItem = 1,
-        Delivered = 2
+        Found = 1,
+        Missing = 2
     }
 
     public enum UserType
@@ -183,6 +175,7 @@ namespace AmanatakBLL.Models
         Operator = 1,
         Guest = 2
     }
+    
 
 }
 

@@ -84,6 +84,66 @@
     <Compile Include="Migrations\201808020300520_verion4.Designer.cs">
       <DependentUpon>201808020300520_verion4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808021150163_verion5.cs" />
+    <Compile Include="Migrations\201808021150163_verion5.Designer.cs">
+      <DependentUpon>201808021150163_verion5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808021734401_Modelss.cs" />
+    <Compile Include="Migrations\201808021734401_Modelss.Designer.cs">
+      <DependentUpon>201808021734401_Modelss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808021737140_Modasd.cs" />
+    <Compile Include="Migrations\201808021737140_Modasd.Designer.cs">
+      <DependentUpon>201808021737140_Modasd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808021741277_InitialCreate.cs" />
+    <Compile Include="Migrations\201808021741277_InitialCreate.Designer.cs">
+      <DependentUpon>201808021741277_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808021742034_InitialCreate1.cs" />
+    <Compile Include="Migrations\201808021742034_InitialCreate1.Designer.cs">
+      <DependentUpon>201808021742034_InitialCreate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808021744555_InitialCreate2.cs" />
+    <Compile Include="Migrations\201808021744555_InitialCreate2.Designer.cs">
+      <DependentUpon>201808021744555_InitialCreate2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808021803153_InitialCreate3.cs" />
+    <Compile Include="Migrations\201808021803153_InitialCreate3.Designer.cs">
+      <DependentUpon>201808021803153_InitialCreate3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808021808242_InitialCreate4.cs" />
+    <Compile Include="Migrations\201808021808242_InitialCreate4.Designer.cs">
+      <DependentUpon>201808021808242_InitialCreate4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808021818594_InitialCreate5.cs" />
+    <Compile Include="Migrations\201808021818594_InitialCreate5.Designer.cs">
+      <DependentUpon>201808021818594_InitialCreate5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808021823557_InitialCreate6.cs" />
+    <Compile Include="Migrations\201808021823557_InitialCreate6.Designer.cs">
+      <DependentUpon>201808021823557_InitialCreate6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808021825188_InitialCreate7.cs" />
+    <Compile Include="Migrations\201808021825188_InitialCreate7.Designer.cs">
+      <DependentUpon>201808021825188_InitialCreate7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808021923412_InitialCreate8.cs" />
+    <Compile Include="Migrations\201808021923412_InitialCreate8.Designer.cs">
+      <DependentUpon>201808021923412_InitialCreate8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808021926106_InitialCreate9.cs" />
+    <Compile Include="Migrations\201808021926106_InitialCreate9.Designer.cs">
+      <DependentUpon>201808021926106_InitialCreate9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808022014490_InitialCreate10.cs" />
+    <Compile Include="Migrations\201808022014490_InitialCreate10.Designer.cs">
+      <DependentUpon>201808022014490_InitialCreate10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808022046274_InitialCreate11.cs" />
+    <Compile Include="Migrations\201808022046274_InitialCreate11.Designer.cs">
+      <DependentUpon>201808022046274_InitialCreate11.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Models\Models.cs" />
@@ -121,6 +181,51 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808020300520_verion4.resx">
       <DependentUpon>201808020300520_verion4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808021150163_verion5.resx">
+      <DependentUpon>201808021150163_verion5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808021734401_Modelss.resx">
+      <DependentUpon>201808021734401_Modelss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808021737140_Modasd.resx">
+      <DependentUpon>201808021737140_Modasd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808021741277_InitialCreate.resx">
+      <DependentUpon>201808021741277_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808021742034_InitialCreate1.resx">
+      <DependentUpon>201808021742034_InitialCreate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808021744555_InitialCreate2.resx">
+      <DependentUpon>201808021744555_InitialCreate2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808021803153_InitialCreate3.resx">
+      <DependentUpon>201808021803153_InitialCreate3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808021808242_InitialCreate4.resx">
+      <DependentUpon>201808021808242_InitialCreate4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808021818594_InitialCreate5.resx">
+      <DependentUpon>201808021818594_InitialCreate5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808021823557_InitialCreate6.resx">
+      <DependentUpon>201808021823557_InitialCreate6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808021825188_InitialCreate7.resx">
+      <DependentUpon>201808021825188_InitialCreate7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808021923412_InitialCreate8.resx">
+      <DependentUpon>201808021923412_InitialCreate8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808021926106_InitialCreate9.resx">
+      <DependentUpon>201808021926106_InitialCreate9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808022014490_InitialCreate10.resx">
+      <DependentUpon>201808022014490_InitialCreate10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808022046274_InitialCreate11.resx">
+      <DependentUpon>201808022046274_InitialCreate11.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

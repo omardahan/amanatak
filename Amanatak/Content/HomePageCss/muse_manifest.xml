@@ -1,0 +1,67 @@
+<manifest alg="2" build="2018.1.0.386" opt="true" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive,cachebuster,textStyling" exportTarget="other" domain="musefree2.com" resolutions="1x" timestamp="1533233300338">
+  <folder name="css">
+    <file name="site_global.css" crc="4233371317"/>
+    <file name="index.css" crc="296829516" ref="index"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="209076791" ref="index"/>
+    <file name="museutils.js" crc="340535759" ref="index"/>
+    <file name="whatinput.js" crc="86476730" ref="index"/>
+    <file name="museconfig.js" crc="310584261" ref="index"/>
+    <file name="jquery.musepolyfill.bgsize.js" crc="4260645839" ref="index"/>
+    <file name="webpro.js" crc="4059564322" ref="index"/>
+    <file name="musewpslideshow.js" crc="3862962738" ref="index"/>
+    <file name="jquery.museoverlay.js" crc="4147669564" ref="index"/>
+    <file name="touchswipe.js" crc="4075097462" ref="index"/>
+    <file name="jquery.watch.js" crc="51536988" ref="index"/>
+    <file name="form_check.php" crc="4020933626" ref="index"/>
+    <file name="form_throttle.php" crc="4259590256" ref="index"/>
+    <file name="form_process.php" crc="37464564" ref="index"/>
+    <file name="form-u1117.php" crc="4015638436" ref="index"/>
+    <file name="jquery.scrolleffects.js" crc="39568856" ref="index"/>
+    <file name="require.js" crc="7928878" ref="index"/>
+  </folder>
+  <folder name="images">
+    <file name="alnahar.jpg" crc="4159878887" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="logo-u1247.png" crc="209504170" ref="index"/>
+    <file name="u1243-4.png" crc="501168951" ref="index"/>
+    <file name="u1241-4.png" crc="3893466655" ref="index"/>
+    <file name="u1239-4.png" crc="4207810951" ref="index"/>
+    <file name="blank.gif" crc="4208392903" ref="index"/>
+    <file name="u1246.png" crc="449724027" ref="index"/>
+    <file name="u1246-r.png" crc="4203173996" ref="index"/>
+    <file name="u2356.png" crc="4045432001" ref="index"/>
+    <file name="u2356-r.png" crc="485390860" ref="index"/>
+    <file name="u1266-4.png" crc="3764080900" ref="index"/>
+    <file name="3icon.jpg" crc="174464625" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="2icon.jpg" crc="3808392614" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="1icon.jpg" crc="271258474" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="6icon.jpg" crc="3894166276" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="5icon.jpg" crc="4144195397" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="4icon.jpg" crc="430127927" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="qoute.png" crc="4293560825" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="alnahar2.jpg" crc="3896812152" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="heart.png" crc="117585526" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+  </folder>
+  <file name="index.html" crc="472712183" seo="true" mt="1533233199162" redirect="true"/>
+</manifest>

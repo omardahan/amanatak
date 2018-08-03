@@ -19,11 +19,14 @@ namespace Amanatak.Areas.Operator.Controllers
     {
         private AmanatakContext db = new AmanatakContext();
 
-        // GET: /Operator/MissingItem/
-        public ActionResult Index(string currentFilter, string searchString, int? page)
+        public ActionResult DashBoard()
+        {
+            return View();
+        }
+        public IPagedList<ItemOwner> GetItemLitByType(string currentFilter, string searchString, int? page,bool Deliveried)
         {
 
- if (searchString != null)
+            if (searchString != null)
             {
                 page = 1;
             }
@@ -38,41 +41,118 @@ namespace Amanatak.Areas.Operator.Controllers
 
 
             // var item = db.Item.Include(i => i.ItemType).OrderBy(e=>e.ItemType.Name).Select(e=>e);
-            var OwnerItem = db.ItemOwner.Include(i => i.Item).OrderBy(e => e.FirstName).Select(e => e).Where(i => i.Item.Deliveried == false);
+            var OwnerItem = db.ItemOwner.Include(i => i.Item).OrderBy(e => e.FirstName).Select(e => e).Where(i => i.Item.Deliveried == Deliveried && i.Item.ItemCategory == ItemCategory.Missing);
+            if (Session["SerialNumber"] != null)
+                searchString = Session["SerialNumber"].ToString();
 
+            Session["SerialNumber"] = null;
             if (!String.IsNullOrEmpty(searchString))
             {
 
                 OwnerItem = OwnerItem.Where(c => c.FirstName.Contains(searchString)
                 || c.IdentificationNo.Contains(searchString)
-                ||c.LastName.Contains(searchString)
-                ||c.Mobile.Contains(searchString)
-                ||c.FullName.Contains(searchString));
+                || c.LastName.Contains(searchString)
+                 || c.Item.AdressFound.Contains(searchString)
+                || c.Mobile.Contains(searchString)
+                || c.Item.ItemDetails.Contains(searchString)
+                || c.Email.Contains(searchString)
+                || c.Item.SerialNumber.Contains(searchString)
+                || c.Item.ItemType.Name.Contains(searchString));
+
 
 
             }
-
             int pageSize = 10;
             int pageNumber = (page ?? 1);
-            
 
-            return View(OwnerItem.ToPagedList(pageNumber, pageSize));
+            return OwnerItem.ToPagedList(pageNumber, pageSize);
 
+
+
+        }
+
+        public ActionResult ItemDeliveried(string currentFilter, string searchString, int? page)
+        {
+            var OwnerItem = GetItemLitByType(currentFilter, searchString, page, true);
+
+
+            return View(OwnerItem);
+    }
+
+        // GET: /Operator/MissingItem/
+        public ActionResult Index(string currentFilter, string searchString, int? page)
+        {
+            var OwnerItem = GetItemLitByType(currentFilter, searchString, page,false);
+
+
+            return View(OwnerItem);
+
+        }
+
+        public ActionResult DeliveryItem(string SerialNumber,int ItemId,string DeliveryNamePerson,string Details)
+        {
+
+            Item missingItem = new Item();
+            if (SerialNumber != string.Empty)
+            {
+                 missingItem = db.Item.Where(e => e.SerialNumber == SerialNumber).FirstOrDefault();
+            }
+
+            var item = db.Item.Find(ItemId);
+            if(item!=null)
+            {
+                using (var context = new AmanatakContext())
+                {
+
+                    using (DbContextTransaction dbTran = context.Database.BeginTransaction())
+                    {
+                        try
+                        {
+                            item.Deliveried = true;
+                            db.Entry(item).State = EntityState.Modified;
+                            db.SaveChanges();
+
+                            //save in ItemsHistory
+                            var ItemsHistory = new ItemsHistory();
+                            ItemsHistory.DeliveryTime = DateTime.UtcNow.AddHours(3);
+                            ItemsHistory.Details = Details;
+                            ItemsHistory.ItemId = ItemId;
+                            if(missingItem!=null)
+                            ItemsHistory.ItemMissingId = missingItem.Id;
+                            db.Entry(ItemsHistory).State = EntityState.Added;
+                            db.SaveChanges();
+
+                            dbTran.Commit();
+                        }
+                        catch
+                        {
+                            dbTran.Rollback();
+                        }
+                        }
+                }
+            }
+           
+
+            if (item == null)
+            {
+                return HttpNotFound();
+            }
+            return RedirectToAction("Index");
         }
 
         // GET: /Operator/MissingItem/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Item item = db.Item.Find(id);
-            if (item == null)
+            var ItemOwner = db.ItemOwner.Include(i => i.Item).Where(m => m.Id == id).FirstOrDefault();
+            MissingItemViewModel model = new MissingItemViewModel();
+            model.ItemOwner = ItemOwner;
+            model.Item = ItemOwner.Item;
+            model.ItemImagesList = ItemOwner.Item.ItemImages.ToList();
+            if (ItemOwner == null)
             {
                 return HttpNotFound();
             }
-            return View(item);
+            return View(model);
         }
 
         // GET: /Operator/MissingItem/Create
@@ -106,28 +186,53 @@ namespace Amanatak.Areas.Operator.Controllers
                             //Get Last Item Id
 
                             var LastId = 0;
-                            if (LastId!=0)
-                             LastId = db.Item.OrderByDescending(p => p.Id).FirstOrDefault().Id;
-
+                            var item = db.Item.Select(e => e).FirstOrDefault();
+                            if(item!=null)
+                            LastId = db.Item.OrderByDescending(p => p.Id).FirstOrDefault().Id;
+                            
                     
+                            //Save Item
                             input.Item.UserId = 1;//For Prototype
                             input.Item.UserType = UserType.Operator;
-
+                            input.Item.ItemCategory = ItemCategory.Missing;
+                             
                             string number = String.Format("{0:d9}", (DateTime.Now.Ticks / 10) % 1000000000);
-                            input.Item.SerialNumber = LastId.ToString() + number;
+                             input.Item.SerialNumber = LastId.ToString() + number;
+                            Session["SerialNumber"] = number;
                             input.Item.Deliveried = false;
                             input.Item.ItemView = false;
                                 db.Item.Add(input.Item);
                                 db.SaveChanges();
-
+                            //Save Owner
                             input.ItemOwner.ItemId = input.Item.Id;
                             db.ItemOwner.Add(input.ItemOwner);
                             db.SaveChanges();
+
+                            //Save Image
+                            for (int i = 0; i < input.ItemImages.Count; i++)
+                            {
+
+                                var file = input.ItemImages[i];
+                            if (file != null && file.ContentLength > 0)
+                            {
+                                    string FileName = Guid.NewGuid().ToString();
+                                file.SaveAs(Server.MapPath("~/ItemsImages/" + FileName+"-"+file.FileName));
+                                    var itemImage = new ItemImages();
+
+                                    
+                                     itemImage.ImagePath =  FileName + "-" + file.FileName;
+                                    itemImage.ItemId= input.Item.Id;
+                                    db.ItemImages.Add(itemImage);
+ 
+                                     db.SaveChanges();
+                                
+                            }
+                            }
                             dbTran.Commit();
                                 return RedirectToAction("Index");
                             }
 
-                        catch
+                        catch(Exception ex)
                         {
                             dbTran.Rollback();
 
@@ -149,13 +254,21 @@ namespace Amanatak.Areas.Operator.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Item item = db.Item.Find(id);
-            if (item == null)
+             var ItemOwner = db.ItemOwner.Include(i => i.Item).Where(m=>m.Id==id).FirstOrDefault();
+            MissingItemViewModel model = new MissingItemViewModel();
+            model.ItemOwner = ItemOwner;
+            model.Item = ItemOwner.Item;
+            
+            if (ItemOwner == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.ItemTypeId = new SelectList(db.ItemType, "Id", "Name", item.ItemTypeId);
-            return View(item);
+ 
+            ViewBag.ItemTypeId = new SelectList(db.ItemType, "Id", "Name",ItemOwner.Item.ItemTypeId);
+            ViewBag.IdentificationID = new SelectList(db.IdentificationType, "Id", "Name",ItemOwner.IdentificationID);
+            ViewBag.NationalityId = new SelectList(db.Countries, "Id", "Name",ItemOwner.NationalityId);
+
+            return View(model);
         }
 
         // POST: /Operator/MissingItem/Edit/5
@@ -163,19 +276,79 @@ namespace Amanatak.Areas.Operator.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,SerialNumber,ItemTypeId,ItemDetails,UserType,UserId")] Item item)
+        public ActionResult Edit(MissingItemViewModel Model)
         {
             if (ModelState.IsValid)
-            {
+            
               
-                item.UserModified = "Operatort1";//For Prototype
-                item.DateModified = DateTime.UtcNow.AddHours(3);
-                db.Entry(item).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.ItemTypeId = new SelectList(db.ItemType, "Id", "Name", item.ItemTypeId);
-            return View(item);
+               
+
+                using (var context = new AmanatakContext())
+                {
+
+                    using (DbContextTransaction dbTran = context.Database.BeginTransaction())
+                    {
+                        try
+                        {
+ 
+                            //Save edit Item
+
+ 
+                            Model.Item.ItemView = true;
+                             Model.Item.UserModified = "Operatort1";//For Prototype
+                            Model.Item.DateModified = DateTime.UtcNow.AddHours(3);
+                            Model.Item.ItemCategory=  ItemCategory.Missing;
+                            db.Entry(Model.Item).State = EntityState.Modified;
+                            db.SaveChanges();
+
+                            //Save Owner
+                            db.Entry(Model.ItemOwner).State = EntityState.Modified;
+
+                            db.SaveChanges();
+
+
+                            //Save new Image
+                            for (int i = 0; i < Model.ItemImages.Count; i++)
+                            {
+
+                                var file = Model.ItemImages[i];
+                                if (file != null && file.ContentLength > 0)
+                                {
+                                    string FileName = Guid.NewGuid().ToString();
+                                    file.SaveAs(Server.MapPath("~/ItemsImages/" + FileName + "-" + file.FileName));
+                                    var itemImage = new ItemImages();
+
+
+                                    itemImage.ImagePath = FileName + "-" + file.FileName;
+                                    itemImage.ItemId = Model.Item.Id;
+                                    db.ItemImages.Add(itemImage);
+
+                                    db.SaveChanges();
+
+                                }
+                            }
+                            dbTran.Commit();
+                            return RedirectToAction("Index");
+                        }
+
+                        catch (Exception ex)
+                        {
+                            dbTran.Rollback();
+
+                        }
+
+                    }
+                }
+
+
+
+                ViewBag.ItemTypeId = new SelectList(db.ItemType, "Id", "Name", Model.Item.ItemTypeId);
+                ViewBag.IdentificationID = new SelectList(db.IdentificationType, "Id", "Name", Model.ItemOwner.IdentificationID);
+                ViewBag.NationalityId = new SelectList(db.Countries, "Id", "Name", Model.ItemOwner.NationalityId);  
+                return View(Model);
+            
+
+        
         }
 
         // GET: /Operator/MissingItem/Delete/5
@@ -185,12 +358,15 @@ namespace Amanatak.Areas.Operator.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Item item = db.Item.Find(id);
-            if (item == null)
+            var ItemOwner = db.ItemOwner.Include(i => i.Item).Where(m => m.Id == id).FirstOrDefault();
+            MissingItemViewModel model = new MissingItemViewModel();
+            model.ItemOwner = ItemOwner;
+            model.Item = ItemOwner.Item;
+            if (ItemOwner == null)
             {
                 return HttpNotFound();
             }
-            return View(item);
+            return View(model);
         }
 
         // POST: /Operator/MissingItem/Delete/5
@@ -198,8 +374,8 @@ namespace Amanatak.Areas.Operator.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Item item = db.Item.Find(id);
-            db.Item.Remove(item);
+            ItemOwner ItemOwner = db.ItemOwner.Find(id);
+            db.Item.Remove(ItemOwner.Item);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

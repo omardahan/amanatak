@@ -7,7 +7,7 @@
 
 
 
-
+<title>قائمة اصناف المفقودات</title>
 
 
 @{
@@ -25,8 +25,7 @@
         <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
             <h1 class="page-title txt-color-blueDark">
                 <!-- PAGE HEADER -->
-                <i class="fa-fw fa fa-home"></i>
-                
+                 
               
             </h1>
         </div>
@@ -52,7 +51,7 @@
                   
                     <header>
                         <span class="widget-icon"> <i class="fa fa-th-list"></i> </span>
-                        <h2>Index</h2>
+                        <h2>قائمة اصناف المفقودات</h2>
 
                     </header>
 
@@ -111,31 +110,7 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-6">
                                     <div id="datatable_tabletools_filter" class="dataTables_filter">
-                                        @*<ul class="list-inline table-buttons">
-                                            <li>
-                                                <a href="javascript:void(0);" class="btn btn-labeled btn-success"> <span class="btn-label"><i class="glyphicon glyphicon-thumbs-up"></i></span>Activate </a>
-                                            </li>
-
-                                            <li><a href="javascript:void(0);" class="btn btn-labeled btn-danger"> <span class="btn-label"><i class="glyphicon glyphicon-thumbs-down"></i></span>Deactivate </a></li>
-                                            <li>
-                                                <div class="btn-group">
-
-                                                    <div class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown"><span class="fa fa-tasks"></span>&emsp; Actions &emsp;</div>
-                                                    <button class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">
-                                                        <span class="caret"></span>
-                                                    </button>
-                                                    <ul class="dropdown-menu">
-                                                        <li>
-                                                            <a href="@Url.Action("")"> More Actions</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:void(0);" class="btn btn-primary"><i class="fa fa-refresh fa-lg"></i></a>
-                                            </li>
-
-                                        </ul>*@
+                                      
 
                                     </div>
                                 </div>
@@ -146,30 +121,12 @@
                                 <table class="table table-bordered table-striped table-condensed table-hover dataTable">
                                     <thead>
                                         <tr>
-                                            @*<th class="smart-form has-tickbox">
-                                                <label class="checkbox">
-                                                    <input type="checkbox" name="checkbox-inline">
-                                                    <i></i>
-                                                </label>
-                                            </th>*@
+                                            
         <th>
-             @Html.DisplayNameFor(model => model.First().Name)
+             الاسم
         </th>
-        <th>
-             @Html.DisplayNameFor(model => model.First().Status)
-        </th>
-        <th>
-             @Html.DisplayNameFor(model => model.First().DateCreated)
-        </th>
-        <th>
-             @Html.DisplayNameFor(model => model.First().UserCreated)
-        </th>
-        <th>
-             @Html.DisplayNameFor(model => model.First().DateModified)
-        </th>
-        <th>
-             @Html.DisplayNameFor(model => model.First().UserModified)
-        </th>
+         
+       
         <th></th>
     </tr>
                                     </thead>
@@ -177,53 +134,18 @@
 
 @foreach (var item in Model) {
     <tr>
-     @*<td class="smart-form has-tickbox">
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" name="checkbox-inline">
-                                                        <i></i>
-                                                    </label>
-                                                </td>*@
+   
         <td>
             @Html.DisplayFor(modelItem => item.Name)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Status)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateCreated)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserCreated)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateModified)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserModified)
-        </td>
+        
         <td>
 
   <ul class="list-inline table-buttons">
                                                         
                                                         <li><a href="@Url.Action("Details", new { id = item.Id })" class="btn btn-sm btn-default"> <span class="fa fa-eye"></span> تفاصيل </a></li>
                                                         <li><a href="@Url.Action("Edit", new { id = item.Id })" class="btn btn-sm btn-primary"><span class="fa fa-edit"></span> تعديل</a></li>
-                                                        @*<li><a href="@Url.Action("Delete", new { id = item.Id })" class="btn btn-sm btn-danger"><span class="fa fa-minus"></span> حذف</a></li>*@
-
-                                                        @*<li>
-                                                            <div class="btn-group">
-
-                                                                <div class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown"><span class="fa fa-tasks"></span>&emsp; Actions &emsp;</div>
-                                                                <button class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">
-                                                                    <span class="caret"></span>
-                                                                </button>
-                                                                <ul class="dropdown-menu">
-                                                                    <li>
-                                                                        <a href="@Url.Action("Delete", new { id = item.Id })">Delete</a>
-                                                                    </li>
-
-                                                                </ul>
-                                                            </div>
-                                                        </li>*@
+                                                   
                                                     </ul>
         </td>
     </tr>

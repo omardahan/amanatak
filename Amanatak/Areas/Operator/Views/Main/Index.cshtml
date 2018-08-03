@@ -1,0 +1,277 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+<head>
+    <meta charset="utf-8">
+ 
+    <title> لوحة التحكم </title>
+    
+ 
+    <!-- Basic Styles -->
+    <link href="~/Content/HomePageCss/assets/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/unify1-9/assets/plugins/calender/css/demo.min.css" rel="stylesheet" />
+    <link href="~/Content/fonts/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/css/smartadmin-production-plugins.min.css" rel="stylesheet" />
+    <link href="~/Content/css/smartadmin-production.min.css" rel="stylesheet" />
+    <link href="~/Content/css/smartadmin-rtl.min.css" rel="stylesheet" />
+    <link href="~/Content/css/smartadmin-skins.min.css" rel="stylesheet" />
+ 
+
+</head>
+ 
+<div id="content">
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+            <h1 class="page-title txt-color-blueDark"><i class="fa-fw fa fa-home"></i> لوحة التحكم</h1>
+        </div>
+        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
+        </div>
+    </div>
+    <!-- widget grid -->
+    <section id="widget-grid" class="">
+
+        <!-- row -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-6">
+                    <div class="well">
+                        <h1>المفقودات</h1>
+                        <p>نسبة عدد المفقودات اللتي تم تسليمها</p>
+                        <div class="row" style="align-items:center">
+                            <div class="col-sm-6">
+                                &nbsp;&nbsp;&nbsp;
+                                <div class="easy-pie-chart txt-color-red easyPieChart" data-percent="75" data-size="180" data-pie-size="75">
+                                    <span class="percent percent-sign txt-color-red font-xl semi-bold">49</span>
+                                </div>
+                                &nbsp;&nbsp;&nbsp;
+                            </div>
+                            <div class="col-sm-6">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                عدد المفقودات
+                                            </th>
+                                            <th>
+                                                50
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                عدد التسليمات
+                                            </th>
+                                            <th>
+                                                25
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="well">
+                        <h1>المعثورات</h1>
+                        <p>نسبة عدد المعثورات اللتي تم الوصول لأصحابها</p>
+                        <div class="row" style="align-items:center">
+                            <div class="col-sm-6">
+                                &nbsp;&nbsp;&nbsp;
+                                <div class="easy-pie-chart txt-color-orange easyPieChart" data-percent="66" data-size="180" data-pie-size="66">
+                                    <span class="percent percent-sign txt-color-red font-xl semi-bold">49</span>
+                                </div>
+                                &nbsp;&nbsp;&nbsp;
+                            </div>
+                            <div class="col-sm-6">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                عدد المعثورات
+                                            </th>
+                                            <th>
+                                                60
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                عدد التسليمات
+                                            </th>
+                                            <th>
+                                                30
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-6">
+                    <div class="well">
+                        <h1>أصناف المفقودات</h1>
+                        <p>عدد المفقودات اللتي تم تسليمها حسب الصنف</p>
+                        <div class="jarviswidget" id="wid-id-1" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false" data-widget-sortable="false">
+
+
+                            <!-- widget div-->
+                            <div>
+
+                                <!-- widget edit box -->
+                                <div class="jarviswidget-editbox">
+                                    <!-- This area used as dropdown edit box -->
+                                    <input class="form-control" type="text">
+                                </div>
+                                <!-- end widget edit box -->
+                                <!-- widget content -->
+                                <div class="widget-body">
+
+                                    <!-- this is what the user will see -->
+                                    <canvas id="doughnutChart" height="120"></canvas>
+
+                                </div>
+                                <!-- end widget content -->
+
+                            </div>
+                            <!-- end widget div -->
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="well">
+                        <h1>أصناف المعثورات</h1>
+                        <p>عدد المعثورات اللتي تم الوصول لأصحابها بحسب الصنف</p>
+                        <div class="jarviswidget" id="wid-id-2" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false" data-widget-sortable="false">
+
+
+                            <!-- widget div-->
+                            <div>
+
+                                <!-- widget edit box -->
+                                <div class="jarviswidget-editbox">
+                                    <!-- This area used as dropdown edit box -->
+                                    <input class="form-control" type="text">
+                                </div>
+                                <!-- end widget edit box -->
+                                <!-- widget content -->
+                                <div class="widget-body">
+
+                                    <!-- this is what the user will see -->
+                                    <canvas id="doughnutChart2" height="120"></canvas>
+
+                                </div>
+                                <!-- end widget content -->
+
+                            </div>
+                            <!-- end widget div -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end row -->
+
+    </section>
+    <!-- end widget grid -->
+
+</div>
+ 
+    <script>
+        $(document).ready(function () {
+            pageSetUp();
+            var randomScalingFactor = function () {
+                return Math.round(Math.random() * 100);
+                //return 0;
+            };
+            // doughnut example
+
+            var DoughtnutConfig = {
+                type: 'doughnut',
+                data: {
+                    datasets: [{
+                        data: [
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                        ],
+                        backgroundColor: [
+                            "#F7464A",
+                            "#46BFBD",
+                            "#FDB45C",
+                            "#949FB1",
+                            "#4D5360",
+                        ],
+                        label: 'Dataset 1'
+                    }],
+                    labels: [
+                        "أجهزة إلكترونية",
+                        "حقائب",
+                        "إكسسوارات",
+                        "وثائق",
+                        "نقود"
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    legend: {
+                        position: 'top',
+                    }
+                }
+            };
+            var DoughtnutConfig2 = {
+                type: 'doughnut',
+                data: {
+                    datasets: [{
+                        data: [
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                        ],
+                        backgroundColor: [
+                            "#F7464A",
+                            "#46BFBD",
+                            "#FDB45C",
+                            "#949FB1",
+                            "#4D5360",
+                        ],
+                        label: 'Dataset 1'
+                    }],
+                    labels: [
+                        "أجهزة إلكترونية",
+                        "حقائب",
+                        "إكسسوارات",
+                        "وثائق",
+                        "نقود"
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    legend: {
+                        position: 'top',
+                    }
+                }
+            };
+
+            window.onload = function () {
+                window.myDoughnut = new Chart(document.getElementById("doughnutChart"), DoughtnutConfig);
+                window.myDoughnut = new Chart(document.getElementById("doughnutChart2"), DoughtnutConfig2);
+            };
+        });
+    </script>
+
+}
